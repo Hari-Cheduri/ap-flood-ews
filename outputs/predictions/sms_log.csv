@@ -1,8 +1,0 @@
-timestamp,name,phone,provider,status,message
-2026-06-12T12:43:32.698298,AP District Collector,+919XXXXXXXXX,mock,mock_sent,"[AP FLOOD EWS - YELLOW]
-Region: Andhra Pradesh
-Rivers at risk: Godavari, Krishna"
-2026-06-12T12:47:45.420600,AP District Collector,+919XXXXXXXXX,mock,mock_sent,"[AP FLOOD EWS - ORANGE]
-Region: Andhra Pradesh
-Rivers at risk: —
-Time: 2026-06-1"

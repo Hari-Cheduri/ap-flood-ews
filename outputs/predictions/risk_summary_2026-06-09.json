@@ -1,0 +1,157 @@
+{
+  "date": "2026-06-09",
+  "generated_at": "2026-06-12T07:11:01.534016Z",
+  "region": {
+    "lat_min": 12.5,
+    "lat_max": 19.5,
+    "lon_min": 76.0,
+    "lon_max": 85.5,
+    "state": "Andhra Pradesh, India"
+  },
+  "grid_size": 50,
+  "n_cells": 2500,
+  "inference_time_s": 5.6,
+  "statistics": {
+    "mean_risk": 0.0948,
+    "max_risk": 0.9994,
+    "min_risk": 0.0012,
+    "std_risk": 0.1952,
+    "pct_Warning_Emergency": 4.0,
+    "pct_Emergency": 2.88
+  },
+  "risk_level_counts": {
+    "Normal": 2254,
+    "Watch": 146,
+    "Warning": 28,
+    "Emergency": 72
+  },
+  "risk_level_pct": {
+    "Normal": 90.16,
+    "Watch": 5.84,
+    "Warning": 1.12,
+    "Emergency": 2.88
+  },
+  "top_Warning_risk_cells": [
+    {
+      "lat": 16.91,
+      "lon": 81.795,
+      "risk": 0.9994,
+      "level": "Emergency"
+    },
+    {
+      "lat": 16.35,
+      "lon": 80.655,
+      "risk": 0.9993,
+      "level": "Emergency"
+    },
+    {
+      "lat": 16.49,
+      "lon": 80.465,
+      "risk": 0.9993,
+      "level": "Emergency"
+    },
+    {
+      "lat": 16.91,
+      "lon": 81.605,
+      "risk": 0.9993,
+      "level": "Emergency"
+    },
+    {
+      "lat": 16.49,
+      "lon": 80.655,
+      "risk": 0.9992,
+      "level": "Emergency"
+    },
+    {
+      "lat": 16.63,
+      "lon": 80.655,
+      "risk": 0.9992,
+      "level": "Emergency"
+    },
+    {
+      "lat": 16.91,
+      "lon": 81.415,
+      "risk": 0.9992,
+      "level": "Emergency"
+    },
+    {
+      "lat": 17.05,
+      "lon": 81.795,
+      "risk": 0.9992,
+      "level": "Emergency"
+    },
+    {
+      "lat": 16.77,
+      "lon": 80.655,
+      "risk": 0.9991,
+      "level": "Emergency"
+    },
+    {
+      "lat": 16.77,
+      "lon": 81.605,
+      "risk": 0.9991,
+      "level": "Emergency"
+    },
+    {
+      "lat": 17.05,
+      "lon": 81.605,
+      "risk": 0.9991,
+      "level": "Emergency"
+    },
+    {
+      "lat": 16.21,
+      "lon": 80.465,
+      "risk": 0.999,
+      "level": "Emergency"
+    },
+    {
+      "lat": 16.35,
+      "lon": 80.465,
+      "risk": 0.999,
+      "level": "Emergency"
+    },
+    {
+      "lat": 16.63,
+      "lon": 80.465,
+      "risk": 0.999,
+      "level": "Emergency"
+    },
+    {
+      "lat": 16.63,
+      "lon": 80.845,
+      "risk": 0.999,
+      "level": "Emergency"
+    },
+    {
+      "lat": 16.77,
+      "lon": 81.795,
+      "risk": 0.999,
+      "level": "Emergency"
+    },
+    {
+      "lat": 16.77,
+      "lon": 81.415,
+      "risk": 0.9989,
+      "level": "Emergency"
+    },
+    {
+      "lat": 17.05,
+      "lon": 81.415,
+      "risk": 0.9989,
+      "level": "Emergency"
+    },
+    {
+      "lat": 17.19,
+      "lon": 81.605,
+      "risk": 0.9989,
+      "level": "Emergency"
+    },
+    {
+      "lat": 16.49,
+      "lon": 80.275,
+      "risk": 0.9988,
+      "level": "Emergency"
+    }
+  ],
+  "alert_level": "Watch"
+}

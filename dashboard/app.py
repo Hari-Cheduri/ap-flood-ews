@@ -42,7 +42,7 @@ import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 from dash import (
-    Dash, Input, Output, State, callback_context,
+    Dash, Input, Output, State, callback_context, dash,
     dash_table, dcc, html,
 )
 from dash.exceptions import PreventUpdate
@@ -364,23 +364,31 @@ def _current_alert(grid: np.ndarray) -> dict:
     alert  = _fas.evaluate_risk_map(_adj)
     alert["monsoon_factor"] = _mult
     return alert
-
-def _load_latest_risk_grid() -> tuple[np.ndarray, dict | None]:
+def _load_latest_risk_grid():
     """
-    Load the most-recently generated risk_map_*.npy and its matching JSON summary.
-    Falls back to a synthetic grid if no file exists yet.
-    Returns (prob_grid, summary_dict_or_None)
+    Priority order:
+    1. Latest model .npy file from risk map generator
+    2. Live Open-Meteo weather API (no key needed)
+    3. Synthetic fallback
     """
+    # 1 — Try most recent model prediction
     npy_files = sorted(Path("outputs/flood_risk_maps").glob("risk_map_*.npy"))
     if npy_files:
         try:
             prob_grid = np.load(str(npy_files[-1])).astype(np.float32)
-            date_str  = npy_files[-1].stem.replace("risk_map_", "")
-            json_path = Path("outputs/predictions") / f"risk_summary_{date_str}.json"
-            summary   = json.loads(json_path.read_text()) if json_path.exists() else None
-            return prob_grid, summary
+            _log.info("Loaded model prediction: %s", npy_files[-1].name)
+            return prob_grid, None
         except Exception as e:
-            _log.warning("Could not load risk map: %s — using synthetic fallback", e)
+            _log.warning("Could not load .npy: %s", e)
+
+    # 2 — Live weather API
+    try:
+        from utils.weather_fetcher import fetch_ap_risk_grid
+        return fetch_ap_risk_grid(), None
+    except Exception as e:
+        _log.warning("Weather API failed: %s — using synthetic", e)
+
+    # 3 — Synthetic fallback
     return _synthetic_risk_grid(), None
 
 # ── Module-level singletons (created once, shared by all callbacks) ───────────
@@ -1064,7 +1072,7 @@ def sms_refresh_and_auto_trigger(alert_data):
 )
 def handle_test_sms(n_clicks):
     if not n_clicks:
-        raise PreventUpdate
+        return dash.no_update 
     try:
         results = _sms.test_connection()
         if results:

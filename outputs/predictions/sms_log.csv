@@ -1,0 +1,28 @@
+timestamp,name,phone,provider,status,message
+2026-06-12T12:43:32.698298,AP District Collector,+919XXXXXXXXX,mock,mock_sent,"[AP FLOOD EWS - YELLOW]
+Region: Andhra Pradesh
+Rivers at risk: Godavari, Krishna"
+2026-06-12T12:47:45.420600,AP District Collector,+919XXXXXXXXX,mock,mock_sent,"[AP FLOOD EWS - ORANGE]
+Region: Andhra Pradesh
+Rivers at risk: —
+Time: 2026-06-1"
+2026-06-16T12:03:34.855684,AP District Collector,+919XXXXXXXXX,mock,mock_sent,"[AP FLOOD EWS - ORANGE]
+Region: Andhra Pradesh
+Rivers at risk: —
+Time: 2026-06-1"
+2026-06-16T12:03:36.822342,AP District Collector,+919XXXXXXXXX,mock,mock_sent,"[AP FLOOD EWS - ORANGE]
+Region: Andhra Pradesh
+Rivers at risk: —
+Time: 2026-06-1"
+2026-07-04T15:21:12.817557,AP District Collector,+919XXXXXXXXX,mock,mock_sent,"[AP FLOOD EWS - ORANGE]
+Region: Andhra Pradesh
+Rivers at risk: —
+Time: 2026-07-0"
+2026-07-04T15:26:25.861889,AP District Collector,+919XXXXXXXXX,mock,mock_sent,"[AP FLOOD EWS - ORANGE]
+Region: Andhra Pradesh
+Rivers at risk: —
+Time: 2026-07-0"
+2026-07-04T16:59:11.423042,AP District Collector,+919XXXXXXXXX,mock,mock_sent,"[AP FLOOD EWS - ORANGE]
+Region: Andhra Pradesh
+Rivers at risk: —
+Time: 2026-07-0"

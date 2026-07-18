@@ -1,0 +1,46 @@
+{
+  "created_utc": "2026-07-18T07:34:34.584515+00:00",
+  "location_name": "palnadu",
+  "cnn": {
+    "raw_probability": 0.014630503952503204,
+    "threshold": 0.055,
+    "decision_score": 0.13300458138639276,
+    "positive": false,
+    "effective_positive": false,
+    "confidence": "LOW",
+    "base_weight": 0.35,
+    "freshness": {
+      "class": "AGING",
+      "age_days": 6.294,
+      "factor": 0.6,
+      "usable": true,
+      "policy": {
+        "fresh_max_days": 3,
+        "recent_max_days": 6,
+        "aging_max_days": 12,
+        "stale_max_days": 24,
+        "expired_after_days": 24
+      },
+      "latest_scene_utc": "2026-07-12T00:30:33+00:00",
+      "oldest_scene_utc": "2026-07-12T00:30:08+00:00",
+      "composite_span_days": 0.0
+    },
+    "freshness_factor": 0.6,
+    "weight": 0.2441860465116279
+  },
+  "lstm": {
+    "raw_probability": 0.5334981679916382,
+    "threshold": 0.3449999999999999,
+    "decision_score": 0.6438917312913269,
+    "positive": true,
+    "confidence": "HIGH",
+    "base_weight": 0.65,
+    "weight": 0.7558139534883721
+  },
+  "evidence_agreement": "LSTM_ONLY",
+  "fusion_score": 0.5191402179424477,
+  "alert_level": "YELLOW",
+  "message": "Possible or borderline combined risk. Monitor updates and verify local reports.",
+  "method": "Threshold-centered decision-level fusion. CNN influence is multiplied by a Sentinel-1 freshness factor and weights are renormalized. Combined score drives GREEN/YELLOW/ORANGE; RED requires two usable positive evidence sources.",
+  "limitation": "Academic prototype; not an official disaster alert."
+}

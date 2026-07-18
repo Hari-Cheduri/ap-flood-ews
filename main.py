@@ -1,198 +1,351 @@
-"""
-main.py
---------
-CLI entrypoint for the Flood Monitoring System.
+"""Unified CLI for the current AP Flood Early Warning System.
 
-Commands
---------
-    python main.py train    – train or fine-tune the hybrid model
-    python main.py predict  – run batch inference on processed data
-    python main.py serve    – launch the Flask+Dash dashboard
-    python main.py pipeline – end-to-end: ingest → preprocess → predict → alert
+Normal live operation loads the saved CNN/LSTM models; it does not retrain them.
 
-Usage
------
-    python main.py --help
-    python main.py train   --epochs 50 --batch-size 8
-    python main.py predict --station G-04
-    python main.py serve   --port 8050
+Examples
+--------
+python main.py status
+python main.py doctor
+python main.py district --lat 16.51 --lon 80.65 --name ntr_vijayawada
+python main.py all-districts --project ap-flood-monitor
+python main.py refresh --project ap-flood-monitor
+python main.py dashboard --port 5050
 """
+
+from __future__ import annotations
 
 import argparse
+import importlib
+from importlib.metadata import PackageNotFoundError, version as package_version
+import json
 import logging
+import subprocess
 import sys
 from pathlib import Path
+from typing import Iterable, Sequence
 
-# ---------------------------------------------------------------------------
-# Logging
-# ---------------------------------------------------------------------------
+ROOT = Path(__file__).resolve().parent
+REPORTS = ROOT / "outputs" / "reports"
+PROCESSED = ROOT / "data" / "processed"
+MODELS = ROOT / "models"
+DISTRICT_RISK = PROCESSED / "ap_district_risk.json"
+SMS_CONFIG = ROOT / "config" / "sms_config.json"
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s  %(levelname)-8s  %(name)s  %(message)s",
-    handlers=[
+
+def make_logger(verbose: bool = False) -> logging.Logger:
+    REPORTS.mkdir(parents=True, exist_ok=True)
+    logger = logging.getLogger("ap_flood_ews")
+    logger.handlers.clear()
+    logger.setLevel(logging.DEBUG if verbose else logging.INFO)
+    fmt = logging.Formatter("%(asctime)s  %(levelname)-8s  %(message)s")
+    for handler in (
         logging.StreamHandler(sys.stdout),
-        logging.FileHandler("outputs/reports/system.log", mode="a"),
-    ],
-)
-logger = logging.getLogger("flood_monitor")
+        logging.FileHandler(REPORTS / "system.log", encoding="utf-8"),
+    ):
+        handler.setFormatter(fmt)
+        logger.addHandler(handler)
+    return logger
 
 
-# ---------------------------------------------------------------------------
-# Command handlers
-# ---------------------------------------------------------------------------
+LOGGER = make_logger()
 
-def cmd_train(args):
-    """Train the hybrid CNN+LSTM model."""
-    logger.info("=== TRAINING MODE ===")
-    logger.info("epochs=%d  batch_size=%d  lr=%g",
-                args.epochs, args.batch_size, args.lr)
 
-    from utils.data_loader  import DataLoader
-    from utils.preprocessor import Preprocessor
-    from models.hybrid_model import HybridCNNLSTM
-    import numpy as np
+def execute(command: Sequence[str], label: str) -> None:
+    LOGGER.info("=" * 68)
+    LOGGER.info(label)
+    LOGGER.info("Command: %s", " ".join(command))
+    LOGGER.info("=" * 68)
+    result = subprocess.run(list(command), cwd=ROOT, check=False)
+    if result.returncode != 0:
+        raise SystemExit(f"{label} failed with exit code {result.returncode}")
 
-    loader = DataLoader()
-    prep   = Preprocessor()
 
-    # ── Sensor data ──────────────────────────────────────────────────────
-    try:
-        df = loader.load_all_sensors()
-        df = prep.resample_sensor_data(df, freq="1H")
-        df = prep.smooth_sensor_data(df, window=3)
+def run_module(module_name: str, arguments: Iterable[str], label: str) -> None:
+    execute([sys.executable, "-m", module_name, *list(arguments)], label)
 
-        X_ts, y_risk = prep.create_sequences(df, window_size=72, n_ahead=24)
-        logger.info("Sensor sequences: X=%s  y=%s", X_ts.shape, y_risk.shape)
 
-        X_tr, X_val, X_te, y_tr, y_val, y_te = prep.split_data(X_ts, y_risk)
-    except FileNotFoundError:
-        logger.warning("No sensor CSV found – using synthetic data for demonstration.")
-        X_tr  = np.random.rand(200, 72, 6).astype("float32")
-        y_tr  = (np.random.rand(200, 24) > 0.8).astype("float32")
-        X_val = np.random.rand(40,  72, 6).astype("float32")
-        y_val = (np.random.rand(40,  24) > 0.8).astype("float32")
+def read_json(path: Path) -> dict:
+    return json.loads(path.read_text(encoding="utf-8"))
 
-    # ── Synthetic image data (replace with real GeoTIFF loader) ──────────
-    img_shape = (256, 256, 7)
-    X_img_tr  = np.random.rand(len(X_tr),  *img_shape).astype("float32")
-    X_img_val = np.random.rand(len(X_val), *img_shape).astype("float32")
-    y_maps_tr  = np.random.rand(len(X_tr),  256, 256, 1).astype("float32")
-    y_maps_val = np.random.rand(len(X_val), 256, 256, 1).astype("float32")
-    y_risk_tr  = y_tr[:, 0:1]
-    y_risk_val = y_val[:, 0:1]
 
-    # ── Model ─────────────────────────────────────────────────────────────
-    model = HybridCNNLSTM(image_shape=img_shape)
-    model.compile(learning_rate=args.lr)
-    model.summary()
+def cmd_status(_args: argparse.Namespace) -> None:
+    print("\nAP FLOOD EARLY WARNING SYSTEM — STATUS")
+    print("=" * 68)
+    print("Project root :", ROOT)
+    print("Python       :", sys.executable)
+    print("Python ver.  :", sys.version.split()[0])
 
-    history = model.fit(
-        X_img_tr, X_tr, y_risk_tr, y_maps_tr,
-        X_img_val, X_val, y_risk_val, y_maps_val,
-        epochs=args.epochs, batch_size=args.batch_size,
+    print("\nFinal artifacts")
+    for name in (
+        "real_cnn_model.h5",
+        "real_lstm_model.h5",
+        "cnn_threshold.json",
+        "lstm_threshold.json",
+        "lstm_scaler.joblib",
+    ):
+        path = MODELS / name
+        state = f"{path.stat().st_size / 1_048_576:.2f} MB" if path.exists() else "MISSING"
+        print(f"{name:<28} {state}")
+
+    print("\nDistrict data")
+    if DISTRICT_RISK.exists():
+        data = read_json(DISTRICT_RISK)
+        print("Generated    :", data.get("generated_utc", "unknown"))
+        print("Total        :", data.get("district_count", "unknown"))
+        print("Successful   :", data.get("successful_count", "unknown"))
+        print("Unavailable  :", data.get("unavailable_count", "unknown"))
+    else:
+        print("Missing      :", DISTRICT_RISK.relative_to(ROOT))
+
+    print("\nSMS")
+    if SMS_CONFIG.exists():
+        cfg = read_json(SMS_CONFIG)
+        auto = cfg.get(
+            "dashboard_auto_send_enabled",
+            cfg.get("dashboard_auto_sms", False),
+        )
+        print("Provider     :", str(cfg.get("provider", "mock")).upper())
+        print("Recipients   :", len(cfg.get("recipients", [])))
+        print("Levels       :", ", ".join(cfg.get("alert_on_levels", [])))
+        print("Automatic    :", bool(auto))
+    else:
+        print("Configuration missing; mock mode should be used.")
+
+    print("\nAcademic prototype — not an official public warning service.")
+
+
+def cmd_doctor(_args: argparse.Namespace) -> None:
+    required_files = [
+        ROOT / "dashboard" / "app.py",
+        ROOT / "realtime" / "run_full_pipeline.py",
+        ROOT / "realtime" / "run_all_districts.py",
+        ROOT / "realtime" / "build_ap_risk_map_data.py",
+        ROOT / "realtime" / "hybrid_decision.py",
+        ROOT / "utils" / "sentinel_fetcher.py",
+        ROOT / "utils" / "risk_map_generator.py",
+        ROOT / "utils" / "alert_system.py",
+        MODELS / "real_cnn_model.h5",
+        MODELS / "real_lstm_model.h5",
+        MODELS / "lstm_scaler.joblib",
+    ]
+    modules = {
+        "numpy": "numpy",
+        "scipy": "scipy",
+        "pandas": "pandas",
+        "tensorflow": "tensorflow",
+        "sklearn": "scikit-learn",
+        "joblib": "joblib",
+        "requests": "requests",
+        "ee": "earthengine-api",
+        "matplotlib": "matplotlib",
+        "folium": "folium",
+        "plotly": "plotly",
+        "dash": "dash",
+        "flask": "Flask",
+        "colorama": "colorama",
+    }
+
+    failed = False
+    print("\nRequired files")
+    print("-" * 68)
+    for path in required_files:
+        ok = path.exists()
+        failed = failed or not ok
+        print(f"[{'OK' if ok else 'MISSING':<7}] {path.relative_to(ROOT)}")
+
+    print("\nPython packages")
+    print("-" * 68)
+    for module_name, package_name in modules.items():
+        try:
+            importlib.import_module(module_name)
+            try:
+                installed_version = package_version(package_name)
+            except PackageNotFoundError:
+                installed_version = "installed"
+            print(
+                f"[OK     ] {package_name:<20} "
+                f"{installed_version}"
+            )
+        except Exception as exc:
+            failed = True
+            print(f"[MISSING] {package_name:<20} {exc}")
+
+    if failed:
+        print("\nCHECK FAILED")
+        print("Install packages with: python -m pip install -r requirements.txt")
+        raise SystemExit(1)
+    print("\nCHECK PASSED")
+
+
+def cmd_district(args: argparse.Namespace) -> None:
+    values = [
+        "--project", args.project,
+        "--lat", str(args.lat),
+        "--lon", str(args.lon),
+        "--name", args.name,
+    ]
+    if args.skip_sentinel_fetch:
+        values.append("--skip-sentinel-fetch")
+    if args.skip_weather_fetch:
+        values.append("--skip-weather-fetch")
+    run_module("realtime.run_full_pipeline", values, f"Live pipeline: {args.name}")
+
+
+def all_district_arguments(args: argparse.Namespace) -> list[str]:
+    values = ["--project", args.project]
+    if args.resume:
+        values.append("--resume")
+    if args.limit is not None:
+        values.extend(["--limit", str(args.limit)])
+    for district in args.district:
+        values.extend(["--district", district])
+    if args.stop_on_error:
+        values.append("--stop-on-error")
+    return values
+
+
+def cmd_all_districts(args: argparse.Namespace) -> None:
+    run_module(
+        "realtime.run_all_districts",
+        all_district_arguments(args),
+        "Run AP district live pipelines",
     )
 
-    model.save("outputs/predictions/hybrid_final.h5")
-    logger.info("=== TRAINING COMPLETE ===")
+
+def cmd_aggregate(_args: argparse.Namespace) -> None:
+    run_module("realtime.build_ap_risk_map_data", [], "Build AP district risk data")
 
 
-def cmd_predict(args):
-    """Run inference for a given station using the latest model."""
-    logger.info("=== PREDICTION MODE  station=%s ===", args.station)
-
-    from models.hybrid_model import HybridCNNLSTM
-    from utils.alert_system  import AlertSystem
-    import numpy as np
-
-    model_path = Path("outputs/predictions/hybrid_final.h5")
-    if not model_path.exists():
-        logger.error("No trained model found at %s. Run `python main.py train` first.", model_path)
-        sys.exit(1)
-
-    model  = HybridCNNLSTM.load(str(model_path))
-    alerts = AlertSystem()
-
-    # Synthetic inference inputs – replace with real data pipeline
-    image         = np.random.rand(256, 256, 7).astype("float32")
-    sensor_window = np.random.rand(72, 6).astype("float32")
-
-    result = model.predict(image, sensor_window)
-    logger.info("Prediction: risk=%.4f  level=%s  flooded=%.1f%%",
-                result["risk_score"], result["alert_level"], result["flooded_area_pct"])
-
-    if result["alert_level"] in ("HIGH", "CRITICAL"):
-        alert = alerts.create_alert(
-            station_id=args.station,
-            risk_score=result["risk_score"],
-            flooded_area_pct=result["flooded_area_pct"],
-        )
-        alerts.dispatch(alert, send_email=False, send_webhook=False)
-
-    return result
+def cmd_map(_args: argparse.Namespace) -> None:
+    run_module("utils.risk_map_generator", [], "Generate live AP risk maps")
 
 
-def cmd_serve(args):
-    """Launch the Flask + Dash dashboard server."""
-    logger.info("=== SERVING DASHBOARD on port %d ===", args.port)
-    from dashboard.app import server
-    server.run(host="0.0.0.0", port=args.port, debug=args.debug)
+def cmd_alert(args: argparse.Namespace) -> None:
+    values = ["--mode", args.mode]
+    if args.send_sms:
+        values.append("--send-sms")
+    run_module("utils.alert_system", values, f"Alert system: {args.mode}")
 
 
-def cmd_pipeline(args):
-    """Full end-to-end pipeline: ingest → preprocess → predict → alert."""
-    logger.info("=== END-TO-END PIPELINE ===")
-    cmd_predict(args)       # prediction & alerting
-    logger.info("Pipeline complete. Check outputs/reports/ for logs.")
+def cmd_dashboard(args: argparse.Namespace) -> None:
+    if args.prepare:
+        cmd_aggregate(args)
+        cmd_map(args)
+        cmd_alert(argparse.Namespace(mode="live", send_sms=False))
+    command = [
+        sys.executable,
+        str(ROOT / "dashboard" / "app.py"),
+        "--host", args.host,
+        "--port", str(args.port),
+    ]
+    if args.debug:
+        command.append("--debug")
+    execute(command, "Start 26-district dashboard")
 
 
-# ---------------------------------------------------------------------------
-# Argument parsing
-# ---------------------------------------------------------------------------
+def cmd_refresh(args: argparse.Namespace) -> None:
+    cmd_all_districts(args)
+    cmd_aggregate(args)
+    if not args.skip_map:
+        cmd_map(args)
+    if not args.skip_alert:
+        cmd_alert(argparse.Namespace(mode="live", send_sms=False))
+    print("\nRefresh complete. Start the dashboard with:")
+    print("python main.py dashboard --port 5050")
+
+
+def cmd_simple_module(args: argparse.Namespace) -> None:
+    run_module(args.module, [], args.label)
+
+
+def add_all_options(parser: argparse.ArgumentParser) -> None:
+    parser.add_argument("--project", default="ap-flood-monitor")
+    parser.add_argument("--resume", action="store_true")
+    parser.add_argument("--limit", type=int)
+    parser.add_argument("--district", action="append", default=[])
+    parser.add_argument("--stop-on-error", action="store_true")
+
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        prog="flood_monitor",
-        description="Hybrid CNN+LSTM Real-Time Flood Monitoring System",
+        description="Freshness-aware CNN + LSTM AP Flood EWS",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
+    parser.add_argument("--verbose", action="store_true")
     sub = parser.add_subparsers(dest="command", required=True)
 
-    # train
-    p_train = sub.add_parser("train", help="Train the hybrid model")
-    p_train.add_argument("--epochs",     type=int,   default=50)
-    p_train.add_argument("--batch-size", type=int,   default=8)
-    p_train.add_argument("--lr",         type=float, default=5e-4)
+    p = sub.add_parser("status", help="Show current models, results, and SMS mode")
+    p.set_defaults(handler=cmd_status)
 
-    # predict
-    p_pred = sub.add_parser("predict", help="Run batch inference")
-    p_pred.add_argument("--station", type=str, default="G-01")
+    p = sub.add_parser("doctor", help="Validate files and Python packages")
+    p.set_defaults(handler=cmd_doctor)
 
-    # serve
-    p_serve = sub.add_parser("serve", help="Launch dashboard")
-    p_serve.add_argument("--port",  type=int,  default=8050)
-    p_serve.add_argument("--debug", action="store_true")
+    p = sub.add_parser("district", help="Run one live district/location")
+    p.add_argument("--project", default="ap-flood-monitor")
+    p.add_argument("--lat", type=float, required=True)
+    p.add_argument("--lon", type=float, required=True)
+    p.add_argument("--name", required=True)
+    p.add_argument("--skip-sentinel-fetch", action="store_true")
+    p.add_argument("--skip-weather-fetch", action="store_true")
+    p.set_defaults(handler=cmd_district)
 
-    # pipeline
-    p_pipe = sub.add_parser("pipeline", help="Run full end-to-end pipeline")
-    p_pipe.add_argument("--station", type=str, default="G-01")
+    p = sub.add_parser("all-districts", help="Run all or selected AP districts")
+    add_all_options(p)
+    p.set_defaults(handler=cmd_all_districts)
+
+    p = sub.add_parser("aggregate", help="Build district JSON/CSV/GeoJSON")
+    p.set_defaults(handler=cmd_aggregate)
+
+    p = sub.add_parser("map", help="Generate interactive and static risk maps")
+    p.set_defaults(handler=cmd_map)
+
+    p = sub.add_parser("alert", help="Run live alert, SMS test, or phone validation")
+    p.add_argument("--mode", choices=("live", "sms-test", "validate-phones"), default="live")
+    p.add_argument("--send-sms", action="store_true")
+    p.set_defaults(handler=cmd_alert)
+
+    p = sub.add_parser("dashboard", aliases=["serve"], help="Start the Dash dashboard")
+    p.add_argument("--host", default="127.0.0.1")
+    p.add_argument("--port", type=int, default=5050)
+    p.add_argument("--debug", action="store_true")
+    p.add_argument("--prepare", action="store_true")
+    p.set_defaults(handler=cmd_dashboard)
+
+    p = sub.add_parser("refresh", aliases=["pipeline"], help="Districts -> aggregate -> map -> alert")
+    add_all_options(p)
+    p.add_argument("--skip-map", action="store_true")
+    p.add_argument("--skip-alert", action="store_true")
+    p.set_defaults(handler=cmd_refresh)
+
+    development = {
+        "train-cnn": ("models.train_real_cnn", "Train CNN"),
+        "evaluate-cnn": ("models.evaluate_real_cnn", "Evaluate CNN"),
+        "build-lstm-data": ("utils.build_real_lstm_dataset", "Build LSTM dataset"),
+        "train-lstm": ("models.train_real_lstm", "Train LSTM"),
+        "evaluate-lstm": ("models.evaluate_real_lstm", "Evaluate LSTM"),
+    }
+    for command, (module, label) in development.items():
+        p = sub.add_parser(command, help=f"Optional model-development command: {label}")
+        p.set_defaults(handler=cmd_simple_module, module=module, label=label)
 
     return parser
 
 
-def main():
-    Path("outputs/reports").mkdir(parents=True, exist_ok=True)
-
+def main() -> None:
+    global LOGGER
     parser = build_parser()
-    args   = parser.parse_args()
-
-    dispatch = {
-        "train":    cmd_train,
-        "predict":  cmd_predict,
-        "serve":    cmd_serve,
-        "pipeline": cmd_pipeline,
-    }
-    dispatch[args.command](args)
+    args = parser.parse_args()
+    LOGGER = make_logger(args.verbose)
+    try:
+        args.handler(args)
+    except KeyboardInterrupt:
+        LOGGER.warning("Stopped by user")
+        raise SystemExit(130)
+    except SystemExit:
+        raise
+    except Exception:
+        LOGGER.exception("Command failed")
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":

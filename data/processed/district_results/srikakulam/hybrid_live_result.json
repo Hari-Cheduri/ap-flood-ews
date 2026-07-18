@@ -1,0 +1,46 @@
+{
+  "created_utc": "2026-07-18T07:38:42.736542+00:00",
+  "location_name": "srikakulam",
+  "cnn": {
+    "raw_probability": 0.8588145971298218,
+    "threshold": 0.055,
+    "decision_score": 0.9252987286401173,
+    "positive": true,
+    "effective_positive": true,
+    "confidence": "HIGH",
+    "base_weight": 0.45,
+    "freshness": {
+      "class": "RECENT",
+      "age_days": 4.309,
+      "factor": 0.85,
+      "usable": true,
+      "policy": {
+        "fresh_max_days": 3,
+        "recent_max_days": 6,
+        "aging_max_days": 12,
+        "stale_max_days": 24,
+        "expired_after_days": 24
+      },
+      "latest_scene_utc": "2026-07-14T00:13:30+00:00",
+      "oldest_scene_utc": "2026-07-07T00:21:11+00:00",
+      "composite_span_days": 6.995
+    },
+    "freshness_factor": 0.85,
+    "weight": 0.41018766756032166
+  },
+  "lstm": {
+    "raw_probability": 0.8326319456100464,
+    "threshold": 0.3449999999999999,
+    "decision_score": 0.8722381264198829,
+    "positive": true,
+    "confidence": "HIGH",
+    "base_weight": 0.55,
+    "weight": 0.5898123324396782
+  },
+  "evidence_agreement": "BOTH_POSITIVE",
+  "fusion_score": 0.8940029310839468,
+  "alert_level": "RED",
+  "message": "Strong usable satellite and weather evidence. Escalate for official verification and emergency decision-making.",
+  "method": "Threshold-centered decision-level fusion. CNN influence is multiplied by a Sentinel-1 freshness factor and weights are renormalized. Combined score drives GREEN/YELLOW/ORANGE; RED requires two usable positive evidence sources.",
+  "limitation": "Academic prototype; not an official disaster alert."
+}

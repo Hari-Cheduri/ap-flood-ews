@@ -1,0 +1,53 @@
+{
+  "pipeline_started_utc": "2026-07-18T07:37:02.897871+00:00",
+  "pipeline_completed_utc": "2026-07-18T07:37:52.373636+00:00",
+  "project": "ap-flood-monitor",
+  "location_name": "sri_sathya_sai",
+  "latitude": 14.17,
+  "longitude": 77.81,
+  "cnn": {
+    "probability": 0.012604380957782269,
+    "threshold": 0.055,
+    "prediction": 0,
+    "confidence": "LOW",
+    "satellite_freshness": {
+      "class": "FRESH",
+      "age_days": 1.29,
+      "factor": 1.0,
+      "usable": true,
+      "policy": {
+        "fresh_max_days": 3,
+        "recent_max_days": 6,
+        "aging_max_days": 12,
+        "stale_max_days": 24,
+        "expired_after_days": 24
+      },
+      "latest_scene_utc": "2026-07-17T00:39:05+00:00",
+      "oldest_scene_utc": "2026-07-17T00:39:05+00:00",
+      "composite_span_days": 0.0
+    },
+    "latest_scene_utc": "2026-07-17T00:39:05+00:00",
+    "scene_count": 1,
+    "composite_method": "median",
+    "effective_weight": 0.35
+  },
+  "lstm": {
+    "probability": 0.39248207211494446,
+    "threshold": 0.3449999999999999,
+    "prediction": 1,
+    "confidence": "LOW",
+    "weather_summary": {
+      "rain_last_24h_mm": 14.200000762939453,
+      "rain_last_72h_mm": 17.0,
+      "mean_humidity_last_24h": 69.95833587646484
+    },
+    "effective_weight": 0.65
+  },
+  "hybrid": {
+    "fusion_score": 0.3886646552766253,
+    "alert_level": "YELLOW",
+    "message": "Possible or borderline combined risk. Monitor updates and verify local reports.",
+    "evidence_agreement": "LSTM_ONLY"
+  },
+  "status": "success"
+}

@@ -1,0 +1,46 @@
+{
+  "created_utc": "2026-07-18T07:40:53.890044+00:00",
+  "location_name": "vizianagaram",
+  "cnn": {
+    "raw_probability": 0.013746476732194424,
+    "threshold": 0.055,
+    "decision_score": 0.12496797029267658,
+    "positive": false,
+    "effective_positive": false,
+    "confidence": "LOW",
+    "base_weight": 0.35,
+    "freshness": {
+      "class": "RECENT",
+      "age_days": 4.31,
+      "factor": 0.85,
+      "usable": true,
+      "policy": {
+        "fresh_max_days": 3,
+        "recent_max_days": 6,
+        "aging_max_days": 12,
+        "stale_max_days": 24,
+        "expired_after_days": 24
+      },
+      "latest_scene_utc": "2026-07-14T00:13:30+00:00",
+      "oldest_scene_utc": "2026-07-07T00:21:36+00:00",
+      "composite_span_days": 6.994
+    },
+    "freshness_factor": 0.85,
+    "weight": 0.31398416886543534
+  },
+  "lstm": {
+    "raw_probability": 0.7268210053443909,
+    "threshold": 0.3449999999999999,
+    "decision_score": 0.7914664162934282,
+    "positive": true,
+    "confidence": "HIGH",
+    "base_weight": 0.65,
+    "weight": 0.6860158311345647
+  },
+  "evidence_agreement": "LSTM_ONLY",
+  "fusion_score": 0.5821964556757779,
+  "alert_level": "YELLOW",
+  "message": "Possible or borderline combined risk. Monitor updates and verify local reports.",
+  "method": "Threshold-centered decision-level fusion. CNN influence is multiplied by a Sentinel-1 freshness factor and weights are renormalized. Combined score drives GREEN/YELLOW/ORANGE; RED requires two usable positive evidence sources.",
+  "limitation": "Academic prototype; not an official disaster alert."
+}

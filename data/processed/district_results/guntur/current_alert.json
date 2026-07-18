@@ -1,0 +1,53 @@
+{
+  "pipeline_started_utc": "2026-07-18T07:28:17.745977+00:00",
+  "pipeline_completed_utc": "2026-07-18T07:29:07.212800+00:00",
+  "project": "ap-flood-monitor",
+  "location_name": "guntur",
+  "latitude": 16.31,
+  "longitude": 80.44,
+  "cnn": {
+    "probability": 0.04994407668709755,
+    "threshold": 0.055,
+    "prediction": 0,
+    "confidence": "LOW",
+    "satellite_freshness": {
+      "class": "AGING",
+      "age_days": 6.291,
+      "factor": 0.6,
+      "usable": true,
+      "policy": {
+        "fresh_max_days": 3,
+        "recent_max_days": 6,
+        "aging_max_days": 12,
+        "stale_max_days": 24,
+        "expired_after_days": 24
+      },
+      "latest_scene_utc": "2026-07-12T00:30:08+00:00",
+      "oldest_scene_utc": "2026-07-12T00:30:08+00:00",
+      "composite_span_days": 0.0
+    },
+    "latest_scene_utc": "2026-07-12T00:30:08+00:00",
+    "scene_count": 1,
+    "composite_method": "median",
+    "effective_weight": 0.2441860465116279
+  },
+  "lstm": {
+    "probability": 0.5219696164131165,
+    "threshold": 0.3449999999999999,
+    "prediction": 1,
+    "confidence": "HIGH",
+    "weather_summary": {
+      "rain_last_24h_mm": 4.900000095367432,
+      "rain_last_72h_mm": 6.600000381469727,
+      "mean_humidity_last_24h": 70.5
+    },
+    "effective_weight": 0.7558139534883721
+  },
+  "hybrid": {
+    "fusion_score": 0.5908803888623724,
+    "alert_level": "YELLOW",
+    "message": "Possible or borderline combined risk. Monitor updates and verify local reports.",
+    "evidence_agreement": "LSTM_ONLY"
+  },
+  "status": "success"
+}

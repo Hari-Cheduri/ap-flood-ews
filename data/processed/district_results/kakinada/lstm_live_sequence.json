@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-07-18T07:29:40.193579+00:00",
+  "contract": "open_meteo_hourly_72x6_v1",
+  "location_name": "kakinada",
+  "latitude": 16.99,
+  "longitude": 82.25,
+  "features": [
+    "temperature_2m",
+    "relative_humidity_2m",
+    "precipitation",
+    "rain",
+    "wind_speed_10m",
+    "surface_pressure"
+  ],
+  "shape": [
+    72,
+    6
+  ],
+  "start_time": "2026-07-15T13:00",
+  "end_time": "2026-07-18T12:00",
+  "raw_summary": {
+    "rain_last_24h_mm": 7.299999713897705,
+    "rain_last_72h_mm": 10.5,
+    "mean_humidity_last_24h": 71.91666412353516
+  }
+}

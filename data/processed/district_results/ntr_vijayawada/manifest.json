@@ -1,0 +1,19 @@
+{
+  "archived_utc": "2026-07-18T07:33:42.713726+00:00",
+  "district_slug": "ntr_vijayawada",
+  "district_name": "NTR (Vijayawada)",
+  "latitude": 16.51,
+  "longitude": 80.65,
+  "copied_files": [
+    "sentinel1_live_patch.npy",
+    "sentinel1_live_patch.json",
+    "live_cnn_prediction.json",
+    "lstm_live_raw.npy",
+    "lstm_live_sequence.npy",
+    "lstm_live_sequence.json",
+    "live_lstm_prediction.json",
+    "hybrid_live_result.json",
+    "current_alert.json"
+  ],
+  "missing_files": []
+}

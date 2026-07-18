@@ -1,0 +1,53 @@
+{
+  "pipeline_started_utc": "2026-07-18T07:40:03.592205+00:00",
+  "pipeline_completed_utc": "2026-07-18T07:40:53.962500+00:00",
+  "project": "ap-flood-monitor",
+  "location_name": "vizianagaram",
+  "latitude": 18.1,
+  "longitude": 83.4,
+  "cnn": {
+    "probability": 0.013746476732194424,
+    "threshold": 0.055,
+    "prediction": 0,
+    "confidence": "LOW",
+    "satellite_freshness": {
+      "class": "RECENT",
+      "age_days": 4.31,
+      "factor": 0.85,
+      "usable": true,
+      "policy": {
+        "fresh_max_days": 3,
+        "recent_max_days": 6,
+        "aging_max_days": 12,
+        "stale_max_days": 24,
+        "expired_after_days": 24
+      },
+      "latest_scene_utc": "2026-07-14T00:13:30+00:00",
+      "oldest_scene_utc": "2026-07-07T00:21:36+00:00",
+      "composite_span_days": 6.994
+    },
+    "latest_scene_utc": "2026-07-14T00:13:30+00:00",
+    "scene_count": 2,
+    "composite_method": "median",
+    "effective_weight": 0.31398416886543534
+  },
+  "lstm": {
+    "probability": 0.7268210053443909,
+    "threshold": 0.3449999999999999,
+    "prediction": 1,
+    "confidence": "HIGH",
+    "weather_summary": {
+      "rain_last_24h_mm": 11.600000381469727,
+      "rain_last_72h_mm": 13.40000057220459,
+      "mean_humidity_last_24h": 88.70833587646484
+    },
+    "effective_weight": 0.6860158311345647
+  },
+  "hybrid": {
+    "fusion_score": 0.5821964556757779,
+    "alert_level": "YELLOW",
+    "message": "Possible or borderline combined risk. Monitor updates and verify local reports.",
+    "evidence_agreement": "LSTM_ONLY"
+  },
+  "status": "success"
+}

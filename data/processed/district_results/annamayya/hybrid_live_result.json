@@ -1,0 +1,46 @@
+{
+  "created_utc": "2026-07-18T07:25:02.712674+00:00",
+  "location_name": "annamayya",
+  "cnn": {
+    "raw_probability": 0.014669415540993214,
+    "threshold": 0.055,
+    "decision_score": 0.1333583230999383,
+    "positive": false,
+    "effective_positive": false,
+    "confidence": "LOW",
+    "base_weight": 0.35,
+    "freshness": {
+      "class": "FRESH",
+      "age_days": 1.282,
+      "factor": 1.0,
+      "usable": true,
+      "policy": {
+        "fresh_max_days": 3,
+        "recent_max_days": 6,
+        "aging_max_days": 12,
+        "stale_max_days": 24,
+        "expired_after_days": 24
+      },
+      "latest_scene_utc": "2026-07-17T00:39:05+00:00",
+      "oldest_scene_utc": "2026-07-12T00:30:58+00:00",
+      "composite_span_days": 5.006
+    },
+    "freshness_factor": 1.0,
+    "weight": 0.35
+  },
+  "lstm": {
+    "raw_probability": 0.5653895139694214,
+    "threshold": 0.3449999999999999,
+    "decision_score": 0.6682362702056652,
+    "positive": true,
+    "confidence": "HIGH",
+    "base_weight": 0.65,
+    "weight": 0.65
+  },
+  "evidence_agreement": "LSTM_ONLY",
+  "fusion_score": 0.48102898871866084,
+  "alert_level": "YELLOW",
+  "message": "Possible or borderline combined risk. Monitor updates and verify local reports.",
+  "method": "Threshold-centered decision-level fusion. CNN influence is multiplied by a Sentinel-1 freshness factor and weights are renormalized. Combined score drives GREEN/YELLOW/ORANGE; RED requires two usable positive evidence sources.",
+  "limitation": "Academic prototype; not an official disaster alert."
+}

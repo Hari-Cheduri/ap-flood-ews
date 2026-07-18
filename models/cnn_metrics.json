@@ -1,0 +1,139 @@
+{
+  "status": "usable_prototype",
+  "warnings": [],
+  "contract": "sentinel1_png_rgb_v1",
+  "split_strategy": "stratified",
+  "seed": 42,
+  "dataset": {
+    "samples": 150,
+    "shape": [
+      150,
+      64,
+      64,
+      3
+    ],
+    "class_distribution": {
+      "0": 121,
+      "1": 29
+    },
+    "duplicates": {
+      "exact_duplicate_rows": 0,
+      "conflicting_duplicate_images": 0
+    },
+    "label_provenance": "Weak labels generated from Sentinel-1 water fraction, historical rainfall, and monsoon season. These are flood-risk proxy labels, not manually verified flood polygons."
+  },
+  "split": {
+    "train_samples": 105,
+    "validation_samples": 22,
+    "test_samples": 23,
+    "train_distribution": {
+      "0": 85,
+      "1": 20
+    },
+    "validation_distribution": {
+      "0": 18,
+      "1": 4
+    },
+    "test_distribution": {
+      "0": 18,
+      "1": 5
+    }
+  },
+  "selected_trial": 2,
+  "threshold": 0.055,
+  "validation": {
+    "threshold": 0.055,
+    "accuracy": 0.9090909090909091,
+    "balanced_accuracy": 0.9444444444444444,
+    "precision": 0.6666666666666666,
+    "recall": 1.0,
+    "specificity": 0.8888888888888888,
+    "f1": 0.8,
+    "mcc": 0.769800358919501,
+    "confusion_matrix": [
+      [
+        16,
+        2
+      ],
+      [
+        0,
+        4
+      ]
+    ],
+    "predicted_non_flood": 16,
+    "predicted_flood": 6,
+    "roc_auc": 0.9444444444444444,
+    "pr_auc": 0.8166666666666667,
+    "probability_stats": {
+      "min": 0.011333014816045761,
+      "max": 0.8582898378372192,
+      "mean": 0.17139609158039093,
+      "std": 0.2953588664531708,
+      "p05": 0.012054246012121439,
+      "p95": 0.8548911511898041,
+      "spread_p95_p05": 0.8428369051776826
+    },
+    "compressed_probability_warning": false,
+    "collapsed_probability_warning": false,
+    "threshold_selection": {
+      "threshold": 0.055,
+      "accuracy": 0.9090909090909091,
+      "balanced_accuracy": 0.9444444444444444,
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "specificity": 0.8888888888888888,
+      "f1": 0.8,
+      "mcc": 0.769800358919501,
+      "confusion_matrix": [
+        [
+          16,
+          2
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "predicted_non_flood": 16,
+      "predicted_flood": 6,
+      "selection_score": 0.893888888888889,
+      "selection_method": "0.65*balanced_accuracy + 0.35*f1 with one-class penalty"
+    }
+  },
+  "test": {
+    "threshold": 0.055,
+    "accuracy": 0.9130434782608695,
+    "balanced_accuracy": 0.9444444444444444,
+    "precision": 0.7142857142857143,
+    "recall": 1.0,
+    "specificity": 0.8888888888888888,
+    "f1": 0.8333333333333333,
+    "mcc": 0.7968190728895957,
+    "confusion_matrix": [
+      [
+        16,
+        2
+      ],
+      [
+        0,
+        5
+      ]
+    ],
+    "predicted_non_flood": 16,
+    "predicted_flood": 7,
+    "roc_auc": 0.9666666666666666,
+    "pr_auc": 0.9028571428571428,
+    "probability_stats": {
+      "min": 0.010523165576159954,
+      "max": 0.9202331304550171,
+      "mean": 0.24402354657649994,
+      "std": 0.36818552017211914,
+      "p05": 0.011048581078648567,
+      "p95": 0.879538506269455,
+      "spread_p95_p05": 0.8684899251908064
+    },
+    "compressed_probability_warning": false,
+    "collapsed_probability_warning": false
+  },
+  "majority_class_test_accuracy": 0.782608695652174
+}

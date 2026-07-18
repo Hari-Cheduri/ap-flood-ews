@@ -1,0 +1,29 @@
+﻿{
+  "provider": "mock",
+  "recipients": [
+    {
+      "name": "AP District Authority",
+      "phone": "+91XXXXXXXXXX",
+      "levels": [
+        "ORANGE",
+        "RED"
+      ]
+    }
+  ],
+  "alert_on_levels": [
+    "ORANGE",
+    "RED"
+  ],
+  "cooldown_minutes": 30,
+  "max_sms_per_hour": 10,
+  "dashboard_auto_send_enabled": false,
+  "dashboard_min_fusion_for_sms": 0.6,
+  "twilio": {
+    "account_sid": "",
+    "auth_token": "",
+    "from_number": ""
+  },
+  "fast2sms": {
+    "api_key": ""
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-07-18T07:28:00.923298+00:00",
+  "contract": "open_meteo_hourly_72x6_v1",
+  "location_name": "eluru",
+  "latitude": 16.71,
+  "longitude": 81.1,
+  "features": [
+    "temperature_2m",
+    "relative_humidity_2m",
+    "precipitation",
+    "rain",
+    "wind_speed_10m",
+    "surface_pressure"
+  ],
+  "shape": [
+    72,
+    6
+  ],
+  "start_time": "2026-07-15T13:00",
+  "end_time": "2026-07-18T12:00",
+  "raw_summary": {
+    "rain_last_24h_mm": 6.800000190734863,
+    "rain_last_72h_mm": 8.5,
+    "mean_humidity_last_24h": 78.33333587646484
+  }
+}

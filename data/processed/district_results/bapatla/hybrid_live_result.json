@@ -1,0 +1,46 @@
+{
+  "created_utc": "2026-07-18T07:25:51.561788+00:00",
+  "location_name": "bapatla",
+  "cnn": {
+    "raw_probability": 0.874575138092041,
+    "threshold": 0.055,
+    "decision_score": 0.9336376392021382,
+    "positive": true,
+    "effective_positive": true,
+    "confidence": "HIGH",
+    "base_weight": 0.45,
+    "freshness": {
+      "class": "AGING",
+      "age_days": 6.288,
+      "factor": 0.6,
+      "usable": true,
+      "policy": {
+        "fresh_max_days": 3,
+        "recent_max_days": 6,
+        "aging_max_days": 12,
+        "stale_max_days": 24,
+        "expired_after_days": 24
+      },
+      "latest_scene_utc": "2026-07-12T00:30:33+00:00",
+      "oldest_scene_utc": "2026-07-12T00:30:08+00:00",
+      "composite_span_days": 0.0
+    },
+    "freshness_factor": 0.6,
+    "weight": 0.32926829268292684
+  },
+  "lstm": {
+    "raw_probability": 0.5806924104690552,
+    "threshold": 0.3449999999999999,
+    "decision_score": 0.6799178705870651,
+    "positive": true,
+    "confidence": "HIGH",
+    "base_weight": 0.55,
+    "weight": 0.6707317073170732
+  },
+  "evidence_agreement": "BOTH_POSITIVE",
+  "fusion_score": 0.7634597456188574,
+  "alert_level": "ORANGE",
+  "message": "Meaningful combined flood-risk evidence. Verify river levels, drainage conditions, and district reports.",
+  "method": "Threshold-centered decision-level fusion. CNN influence is multiplied by a Sentinel-1 freshness factor and weights are renormalized. Combined score drives GREEN/YELLOW/ORANGE; RED requires two usable positive evidence sources.",
+  "limitation": "Academic prototype; not an official disaster alert."
+}

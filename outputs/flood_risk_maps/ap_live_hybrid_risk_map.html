@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5be06d6364b2abeff1c0d9662e656df8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_5be06d6364b2abeff1c0d9662e656df8" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_5be06d6364b2abeff1c0d9662e656df8 = L.map(
+                "map_5be06d6364b2abeff1c0d9662e656df8",
+                {
+                    center: [15.9129, 79.74],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 7,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_5be06d6364b2abeff1c0d9662e656df8);
+
+            
+
+        
+    
+            var tile_layer_f5384a9461c75d05080ddddb2615807a = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f5384a9461c75d05080ddddb2615807a.addTo(map_5be06d6364b2abeff1c0d9662e656df8);
+        
+    
+            var feature_group_3e9136f3c27a250319f2bb59257046df = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_e6b49e8c20aa5f5d9cd764e586669e01 = L.circleMarker(
+                [18.08, 82.66],
+                {"bubblingMouseEvents": true, "color": "#333333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffd92f", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.753626226012832, "stroke": true, "weight": 1}
+            ).addTo(feature_group_3e9136f3c27a250319f2bb59257046df);
+        
+    
+        var popup_94dac59aa02d2f63cc73b7335ea56376 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_cbb72f52882c47050ad98122a68278ad = $(`<div id="html_cbb72f52882c47050ad98122a68278ad" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Arial;min-width:260px">           <h4 style="margin:0 0 8px 0">Alluri Sitharama Raju</h4>           <b>Hybrid alert:</b> YELLOW<br>           <b>Fusion score:</b> 51.7%<br>           <hr style="margin:7px 0">           <b>CNN satellite score:</b> 1.7%<br>           <b>CNN confidence:</b> LOW<br>           <b>Latest Sentinel scene:</b> 2026-07-07T00:21:36+00:00<br>           <b>Satellite age:</b> 11.29 days<br>           <b>Satellite freshness:</b> AGING<br>           <b>CNN effective weight:</b> 24.4%<br>           <b>LSTM weather score:</b> 52.0%<br>           <b>LSTM confidence:</b> HIGH<br>           <hr style="margin:7px 0">           <b>Rain, previous 24 h:</b> 3.60 mm<br>           <b>Rain, previous 72 h:</b> 4.80 mm<br>           <b>Humidity, previous 24 h:</b> 89.92%<br>           <b>Updated:</b> 2026-07-18T07:22:43.785929+00:00<br>           <p style="margin:8px 0 0 0">Possible or borderline combined risk. Monitor updates and verify local reports.</p>         </div>         </div>`)[0];
+                popup_94dac59aa02d2f63cc73b7335ea56376.setContent(html_cbb72f52882c47050ad98122a68278ad);
+            
+        
+
+        circle_marker_e6b49e8c20aa5f5d9cd764e586669e01.bindPopup(popup_94dac59aa02d2f63cc73b7335ea56376)
+        ;
+
+        
+    
+    
+            circle_marker_e6b49e8c20aa5f5d9cd764e586669e01.bindTooltip(
+                `<div>
+                     Alluri Sitharama Raju: YELLOW (51.7%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_08785e27aeacdd57da2184cd8777d1ca = L.circleMarker(
+                [17.69, 83.0],
+                {"bubblingMouseEvents": true, "color": "#333333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffd92f", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.304845174558423, "stroke": true, "weight": 1}
+            ).addTo(feature_group_3e9136f3c27a250319f2bb59257046df);
+        
+    
+        var popup_161fe8ad5c06f720d6b2e5853047e2e8 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_ecf58772ba54dbe6ec038f2f2b79ed90 = $(`<div id="html_ecf58772ba54dbe6ec038f2f2b79ed90" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Arial;min-width:260px">           <h4 style="margin:0 0 8px 0">Anakapalli</h4>           <b>Hybrid alert:</b> YELLOW<br>           <b>Fusion score:</b> 55.4%<br>           <hr style="margin:7px 0">           <b>CNN satellite score:</b> 1.9%<br>           <b>CNN confidence:</b> LOW<br>           <b>Latest Sentinel scene:</b> 2026-07-07T00:21:36+00:00<br>           <b>Satellite age:</b> 11.29 days<br>           <b>Satellite freshness:</b> AGING<br>           <b>CNN effective weight:</b> 24.4%<br>           <b>LSTM weather score:</b> 57.6%<br>           <b>LSTM confidence:</b> HIGH<br>           <hr style="margin:7px 0">           <b>Rain, previous 24 h:</b> 6.60 mm<br>           <b>Rain, previous 72 h:</b> 8.60 mm<br>           <b>Humidity, previous 24 h:</b> 83.08%<br>           <b>Updated:</b> 2026-07-18T07:23:32.004640+00:00<br>           <p style="margin:8px 0 0 0">Possible or borderline combined risk. Monitor updates and verify local reports.</p>         </div>         </div>`)[0];
+                popup_161fe8ad5c06f720d6b2e5853047e2e8.setContent(html_ecf58772ba54dbe6ec038f2f2b79ed90);
+            
+        
+
+        circle_marker_08785e27aeacdd57da2184cd8777d1ca.bindPopup(popup_161fe8ad5c06f720d6b2e5853047e2e8)
+        ;
+
+        
+    
+    
+            circle_marker_08785e27aeacdd57da2184cd8777d1ca.bindTooltip(
+                `<div>
+                     Anakapalli: YELLOW (55.4%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ce1e3b83dd5e0b7d8847a3a419d16330 = L.circleMarker(
+                [14.68, 77.6],
+                {"bubblingMouseEvents": true, "color": "#333333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffd92f", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.738071745557559, "stroke": true, "weight": 1}
+            ).addTo(feature_group_3e9136f3c27a250319f2bb59257046df);
+        
+    
+        var popup_0c03861dcf4e7cd05660ccadf182cb69 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_82a4be6493e1618df025c8fac28584bd = $(`<div id="html_82a4be6493e1618df025c8fac28584bd" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Arial;min-width:260px">           <h4 style="margin:0 0 8px 0">Ananthapuramu</h4>           <b>Hybrid alert:</b> YELLOW<br>           <b>Fusion score:</b> 44.9%<br>           <hr style="margin:7px 0">           <b>CNN satellite score:</b> 2.7%<br>           <b>CNN confidence:</b> LOW<br>           <b>Latest Sentinel scene:</b> 2026-07-17T00:39:05+00:00<br>           <b>Satellite age:</b> 1.28 days<br>           <b>Satellite freshness:</b> FRESH<br>           <b>CNN effective weight:</b> 35.0%<br>           <b>LSTM weather score:</b> 42.1%<br>           <b>LSTM confidence:</b> MEDIUM<br>           <hr style="margin:7px 0">           <b>Rain, previous 24 h:</b> 8.10 mm<br>           <b>Rain, previous 72 h:</b> 9.40 mm<br>           <b>Humidity, previous 24 h:</b> 70.08%<br>           <b>Updated:</b> 2026-07-18T07:24:19.836402+00:00<br>           <p style="margin:8px 0 0 0">Possible or borderline combined risk. Monitor updates and verify local reports.</p>         </div>         </div>`)[0];
+                popup_0c03861dcf4e7cd05660ccadf182cb69.setContent(html_82a4be6493e1618df025c8fac28584bd);
+            
+        
+
+        circle_marker_ce1e3b83dd5e0b7d8847a3a419d16330.bindPopup(popup_0c03861dcf4e7cd05660ccadf182cb69)
+        ;
+
+        
+    
+    
+            circle_marker_ce1e3b83dd5e0b7d8847a3a419d16330.bindTooltip(
+                `<div>
+                     Ananthapuramu: YELLOW (44.9%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_81f4bc6d379663755b2b8e85d88c3bc2 = L.circleMarker(
+                [14.05, 78.75],
+                {"bubblingMouseEvents": true, "color": "#333333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffd92f", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.215434830779913, "stroke": true, "weight": 1}
+            ).addTo(feature_group_3e9136f3c27a250319f2bb59257046df);
+        
+    
+        var popup_2c99d4e58720b11bf42e823d3142d52c = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_d8359ba0ebd21da17370a1205c2f5fc7 = $(`<div id="html_d8359ba0ebd21da17370a1205c2f5fc7" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Arial;min-width:260px">           <h4 style="margin:0 0 8px 0">Annamayya</h4>           <b>Hybrid alert:</b> YELLOW<br>           <b>Fusion score:</b> 48.1%<br>           <hr style="margin:7px 0">           <b>CNN satellite score:</b> 1.5%<br>           <b>CNN confidence:</b> LOW<br>           <b>Latest Sentinel scene:</b> 2026-07-17T00:39:05+00:00<br>           <b>Satellite age:</b> 1.28 days<br>           <b>Satellite freshness:</b> FRESH<br>           <b>CNN effective weight:</b> 35.0%<br>           <b>LSTM weather score:</b> 56.5%<br>           <b>LSTM confidence:</b> HIGH<br>           <hr style="margin:7px 0">           <b>Rain, previous 24 h:</b> 28.70 mm<br>           <b>Rain, previous 72 h:</b> 29.20 mm<br>           <b>Humidity, previous 24 h:</b> 69.33%<br>           <b>Updated:</b> 2026-07-18T07:25:02.771868+00:00<br>           <p style="margin:8px 0 0 0">Possible or borderline combined risk. Monitor updates and verify local reports.</p>         </div>         </div>`)[0];
+                popup_2c99d4e58720b11bf42e823d3142d52c.setContent(html_d8359ba0ebd21da17370a1205c2f5fc7);
+            
+        
+
+        circle_marker_81f4bc6d379663755b2b8e85d88c3bc2.bindPopup(popup_2c99d4e58720b11bf42e823d3142d52c)
+        ;
+
+        
+    
+    
+            circle_marker_81f4bc6d379663755b2b8e85d88c3bc2.bindTooltip(
+                `<div>
+                     Annamayya: YELLOW (48.1%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5cae126b58a5e15a750ab439957477cd = L.circleMarker(
+                [15.9, 80.47],
+                {"bubblingMouseEvents": true, "color": "#333333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18.451896184282862, "stroke": true, "weight": 1}
+            ).addTo(feature_group_3e9136f3c27a250319f2bb59257046df);
+        
+    
+        var popup_6120d90481418fab4cf4914487a6a6cc = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_14d191998004bc1d2332cb8fad2cf9c0 = $(`<div id="html_14d191998004bc1d2332cb8fad2cf9c0" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Arial;min-width:260px">           <h4 style="margin:0 0 8px 0">Bapatla</h4>           <b>Hybrid alert:</b> ORANGE<br>           <b>Fusion score:</b> 76.3%<br>           <hr style="margin:7px 0">           <b>CNN satellite score:</b> 87.5%<br>           <b>CNN confidence:</b> HIGH<br>           <b>Latest Sentinel scene:</b> 2026-07-12T00:30:33+00:00<br>           <b>Satellite age:</b> 6.29 days<br>           <b>Satellite freshness:</b> AGING<br>           <b>CNN effective weight:</b> 32.9%<br>           <b>LSTM weather score:</b> 58.1%<br>           <b>LSTM confidence:</b> HIGH<br>           <hr style="margin:7px 0">           <b>Rain, previous 24 h:</b> 10.30 mm<br>           <b>Rain, previous 72 h:</b> 11.20 mm<br>           <b>Humidity, previous 24 h:</b> 73.42%<br>           <b>Updated:</b> 2026-07-18T07:25:51.643567+00:00<br>           <p style="margin:8px 0 0 0">Meaningful combined flood-risk evidence. Verify river levels, drainage conditions, and district reports.</p>         </div>         </div>`)[0];
+                popup_6120d90481418fab4cf4914487a6a6cc.setContent(html_14d191998004bc1d2332cb8fad2cf9c0);
+            
+        
+
+        circle_marker_5cae126b58a5e15a750ab439957477cd.bindPopup(popup_6120d90481418fab4cf4914487a6a6cc)
+        ;
+
+        
+    
+    
+            circle_marker_5cae126b58a5e15a750ab439957477cd.bindTooltip(
+                `<div>
+                     Bapatla: ORANGE (76.3%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bfc4ccc5b039873b86a22cc2ac6e54e2 = L.circleMarker(
+                [13.22, 79.1],
+                {"bubblingMouseEvents": true, "color": "#333333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffd92f", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.487382860328177, "stroke": true, "weight": 1}
+            ).addTo(feature_group_3e9136f3c27a250319f2bb59257046df);
+        
+    
+        var popup_3e26656d712379d4754c3addf40144d7 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_45bed04025d9844048f2f229c0924e7d = $(`<div id="html_45bed04025d9844048f2f229c0924e7d" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Arial;min-width:260px">           <h4 style="margin:0 0 8px 0">Chittoor</h4>           <b>Hybrid alert:</b> YELLOW<br>           <b>Fusion score:</b> 56.6%<br>           <hr style="margin:7px 0">           <b>CNN satellite score:</b> 1.0%<br>           <b>CNN confidence:</b> LOW<br>           <b>Latest Sentinel scene:</b> 2026-07-12T00:31:23+00:00<br>           <b>Satellite age:</b> 6.29 days<br>           <b>Satellite freshness:</b> AGING<br>           <b>CNN effective weight:</b> 24.4%<br>           <b>LSTM weather score:</b> 63.3%<br>           <b>LSTM confidence:</b> HIGH<br>           <hr style="margin:7px 0">           <b>Rain, previous 24 h:</b> 16.60 mm<br>           <b>Rain, previous 72 h:</b> 16.90 mm<br>           <b>Humidity, previous 24 h:</b> 70.88%<br>           <b>Updated:</b> 2026-07-18T07:26:39.447242+00:00<br>           <p style="margin:8px 0 0 0">Possible or borderline combined risk. Monitor updates and verify local reports.</p>         </div>         </div>`)[0];
+                popup_3e26656d712379d4754c3addf40144d7.setContent(html_45bed04025d9844048f2f229c0924e7d);
+            
+        
+
+        circle_marker_bfc4ccc5b039873b86a22cc2ac6e54e2.bindPopup(popup_3e26656d712379d4754c3addf40144d7)
+        ;
+
+        
+    
+    
+            circle_marker_bfc4ccc5b039873b86a22cc2ac6e54e2.bindTooltip(
+                `<div>
+                     Chittoor: YELLOW (56.6%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5075554e8069567d757d3138d8407b7d = L.circleMarker(
+                [16.99, 81.78],
+                {"bubblingMouseEvents": true, "color": "#333333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18.71795775543982, "stroke": true, "weight": 1}
+            ).addTo(feature_group_3e9136f3c27a250319f2bb59257046df);
+        
+    
+        var popup_b100d01951cad9a2f9c73de918e75a69 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_86021beec91f59bdacd06b7f80e90a9b = $(`<div id="html_86021beec91f59bdacd06b7f80e90a9b" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Arial;min-width:260px">           <h4 style="margin:0 0 8px 0">East Godavari</h4>           <b>Hybrid alert:</b> ORANGE<br>           <b>Fusion score:</b> 78.1%<br>           <hr style="margin:7px 0">           <b>CNN satellite score:</b> 65.7%<br>           <b>CNN confidence:</b> HIGH<br>           <b>Latest Sentinel scene:</b> 2026-07-07T00:22:01+00:00<br>           <b>Satellite age:</b> 11.29 days<br>           <b>Satellite freshness:</b> AGING<br>           <b>CNN effective weight:</b> 32.9%<br>           <b>LSTM weather score:</b> 68.9%<br>           <b>LSTM confidence:</b> HIGH<br>           <hr style="margin:7px 0">           <b>Rain, previous 24 h:</b> 10.50 mm<br>           <b>Rain, previous 72 h:</b> 14.30 mm<br>           <b>Humidity, previous 24 h:</b> 80.75%<br>           <b>Updated:</b> 2026-07-18T07:27:27.725682+00:00<br>           <p style="margin:8px 0 0 0">Meaningful combined flood-risk evidence. Verify river levels, drainage conditions, and district reports.</p>         </div>         </div>`)[0];
+                popup_b100d01951cad9a2f9c73de918e75a69.setContent(html_86021beec91f59bdacd06b7f80e90a9b);
+            
+        
+
+        circle_marker_5075554e8069567d757d3138d8407b7d.bindPopup(popup_b100d01951cad9a2f9c73de918e75a69)
+        ;
+
+        
+    
+    
+            circle_marker_5075554e8069567d757d3138d8407b7d.bindTooltip(
+                `<div>
+                     East Godavari: ORANGE (78.1%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bd5647d1d83d0ebab320faa166656da8 = L.circleMarker(
+                [16.71, 81.1],
+                {"bubblingMouseEvents": true, "color": "#333333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.865714496895695, "stroke": true, "weight": 1}
+            ).addTo(feature_group_3e9136f3c27a250319f2bb59257046df);
+        
+    
+        var popup_da0108ba053e33c68a4786090861c0fa = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_93aa99f012204064c7b297bc4214a91e = $(`<div id="html_93aa99f012204064c7b297bc4214a91e" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Arial;min-width:260px">           <h4 style="margin:0 0 8px 0">Eluru</h4>           <b>Hybrid alert:</b> ORANGE<br>           <b>Fusion score:</b> 65.8%<br>           <hr style="margin:7px 0">           <b>CNN satellite score:</b> 5.3%<br>           <b>CNN confidence:</b> LOW<br>           <b>Latest Sentinel scene:</b> 2026-07-12T00:30:08+00:00<br>           <b>Satellite age:</b> 6.29 days<br>           <b>Satellite freshness:</b> AGING<br>           <b>CNN effective weight:</b> 24.4%<br>           <b>LSTM weather score:</b> 62.8%<br>           <b>LSTM confidence:</b> HIGH<br>           <hr style="margin:7px 0">           <b>Rain, previous 24 h:</b> 6.80 mm<br>           <b>Rain, previous 72 h:</b> 8.50 mm<br>           <b>Humidity, previous 24 h:</b> 78.33%<br>           <b>Updated:</b> 2026-07-18T07:28:17.481985+00:00<br>           <p style="margin:8px 0 0 0">Meaningful combined flood-risk evidence. Verify river levels, drainage conditions, and district reports.</p>         </div>         </div>`)[0];
+                popup_da0108ba053e33c68a4786090861c0fa.setContent(html_93aa99f012204064c7b297bc4214a91e);
+            
+        
+
+        circle_marker_bd5647d1d83d0ebab320faa166656da8.bindPopup(popup_da0108ba053e33c68a4786090861c0fa)
+        ;
+
+        
+    
+    
+            circle_marker_bd5647d1d83d0ebab320faa166656da8.bindTooltip(
+                `<div>
+                     Eluru: ORANGE (65.8%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_682417cceef457ef17900cd9903d8b4f = L.circleMarker(
+                [16.31, 80.44],
+                {"bubblingMouseEvents": true, "color": "#333333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffd92f", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.863205832935586, "stroke": true, "weight": 1}
+            ).addTo(feature_group_3e9136f3c27a250319f2bb59257046df);
+        
+    
+        var popup_dc727d59628b298aa383ba1416ce32a4 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_7d0441c15614fd1034a66138d20b32d9 = $(`<div id="html_7d0441c15614fd1034a66138d20b32d9" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Arial;min-width:260px">           <h4 style="margin:0 0 8px 0">Guntur</h4>           <b>Hybrid alert:</b> YELLOW<br>           <b>Fusion score:</b> 59.1%<br>           <hr style="margin:7px 0">           <b>CNN satellite score:</b> 5.0%<br>           <b>CNN confidence:</b> LOW<br>           <b>Latest Sentinel scene:</b> 2026-07-12T00:30:08+00:00<br>           <b>Satellite age:</b> 6.29 days<br>           <b>Satellite freshness:</b> AGING<br>           <b>CNN effective weight:</b> 24.4%<br>           <b>LSTM weather score:</b> 52.2%<br>           <b>LSTM confidence:</b> HIGH<br>           <hr style="margin:7px 0">           <b>Rain, previous 24 h:</b> 4.90 mm<br>           <b>Rain, previous 72 h:</b> 6.60 mm<br>           <b>Humidity, previous 24 h:</b> 70.50%<br>           <b>Updated:</b> 2026-07-18T07:29:07.212800+00:00<br>           <p style="margin:8px 0 0 0">Possible or borderline combined risk. Monitor updates and verify local reports.</p>         </div>         </div>`)[0];
+                popup_dc727d59628b298aa383ba1416ce32a4.setContent(html_7d0441c15614fd1034a66138d20b32d9);
+            
+        
+
+        circle_marker_682417cceef457ef17900cd9903d8b4f.bindPopup(popup_dc727d59628b298aa383ba1416ce32a4)
+        ;
+
+        
+    
+    
+            circle_marker_682417cceef457ef17900cd9903d8b4f.bindTooltip(
+                `<div>
+                     Guntur: YELLOW (59.1%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_12dacd6c19b90745e5601abc65846485 = L.circleMarker(
+                [16.99, 82.25],
+                {"bubblingMouseEvents": true, "color": "#333333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18.647370146332793, "stroke": true, "weight": 1}
+            ).addTo(feature_group_3e9136f3c27a250319f2bb59257046df);
+        
+    
+        var popup_0f0b7909062787ee64ee12b2d73c6617 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_e39a0b4d0207fb37155426a9a3349d62 = $(`<div id="html_e39a0b4d0207fb37155426a9a3349d62" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Arial;min-width:260px">           <h4 style="margin:0 0 8px 0">Kakinada</h4>           <b>Hybrid alert:</b> ORANGE<br>           <b>Fusion score:</b> 77.6%<br>           <hr style="margin:7px 0">           <b>CNN satellite score:</b> 96.6%<br>           <b>CNN confidence:</b> HIGH<br>           <b>Latest Sentinel scene:</b> 2026-07-07T00:22:01+00:00<br>           <b>Satellite age:</b> 11.30 days<br>           <b>Satellite freshness:</b> AGING<br>           <b>CNN effective weight:</b> 32.9%<br>           <b>LSTM weather score:</b> 57.5%<br>           <b>LSTM confidence:</b> HIGH<br>           <hr style="margin:7px 0">           <b>Rain, previous 24 h:</b> 7.30 mm<br>           <b>Rain, previous 72 h:</b> 10.50 mm<br>           <b>Humidity, previous 24 h:</b> 71.92%<br>           <b>Updated:</b> 2026-07-18T07:29:56.122880+00:00<br>           <p style="margin:8px 0 0 0">Meaningful combined flood-risk evidence. Verify river levels, drainage conditions, and district reports.</p>         </div>         </div>`)[0];
+                popup_0f0b7909062787ee64ee12b2d73c6617.setContent(html_e39a0b4d0207fb37155426a9a3349d62);
+            
+        
+
+        circle_marker_12dacd6c19b90745e5601abc65846485.bindPopup(popup_0f0b7909062787ee64ee12b2d73c6617)
+        ;
+
+        
+    
+    
+            circle_marker_12dacd6c19b90745e5601abc65846485.bindTooltip(
+                `<div>
+                     Kakinada: ORANGE (77.6%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fedc709e7452d948cbaa98498c4bcc7d = L.circleMarker(
+                [16.58, 82.01],
+                {"bubblingMouseEvents": true, "color": "#333333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18.5038934888163, "stroke": true, "weight": 1}
+            ).addTo(feature_group_3e9136f3c27a250319f2bb59257046df);
+        
+    
+        var popup_0cd45c0ddc770a5580ab38fd70fa6e90 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_7c927aa7fb47419aee8f4993d31872d1 = $(`<div id="html_7c927aa7fb47419aee8f4993d31872d1" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Arial;min-width:260px">           <h4 style="margin:0 0 8px 0">Dr. B.R. Ambedkar Konaseema</h4>           <b>Hybrid alert:</b> ORANGE<br>           <b>Fusion score:</b> 76.7%<br>           <hr style="margin:7px 0">           <b>CNN satellite score:</b> 55.1%<br>           <b>CNN confidence:</b> HIGH<br>           <b>Latest Sentinel scene:</b> 2026-07-07T00:22:01+00:00<br>           <b>Satellite age:</b> 11.30 days<br>           <b>Satellite freshness:</b> AGING<br>           <b>CNN effective weight:</b> 32.9%<br>           <b>LSTM weather score:</b> 69.7%<br>           <b>LSTM confidence:</b> HIGH<br>           <hr style="margin:7px 0">           <b>Rain, previous 24 h:</b> 10.20 mm<br>           <b>Rain, previous 72 h:</b> 18.80 mm<br>           <b>Humidity, previous 24 h:</b> 79.38%<br>           <b>Updated:</b> 2026-07-18T07:30:38.725304+00:00<br>           <p style="margin:8px 0 0 0">Meaningful combined flood-risk evidence. Verify river levels, drainage conditions, and district reports.</p>         </div>         </div>`)[0];
+                popup_0cd45c0ddc770a5580ab38fd70fa6e90.setContent(html_7c927aa7fb47419aee8f4993d31872d1);
+            
+        
+
+        circle_marker_fedc709e7452d948cbaa98498c4bcc7d.bindPopup(popup_0cd45c0ddc770a5580ab38fd70fa6e90)
+        ;
+
+        
+    
+    
+            circle_marker_fedc709e7452d948cbaa98498c4bcc7d.bindTooltip(
+                `<div>
+                     Dr. B.R. Ambedkar Konaseema: ORANGE (76.7%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_da3c7c43ee1aed80529043c908226598 = L.circleMarker(
+                [16.18, 81.13],
+                {"bubblingMouseEvents": true, "color": "#333333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18.400553819016928, "stroke": true, "weight": 1}
+            ).addTo(feature_group_3e9136f3c27a250319f2bb59257046df);
+        
+    
+        var popup_4d0acc88ba7b939cad1105fa3c86bc73 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_ae09de43f01746f1a72191fb457cbb41 = $(`<div id="html_ae09de43f01746f1a72191fb457cbb41" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Arial;min-width:260px">           <h4 style="margin:0 0 8px 0">Krishna</h4>           <b>Hybrid alert:</b> ORANGE<br>           <b>Fusion score:</b> 76.0%<br>           <hr style="margin:7px 0">           <b>CNN satellite score:</b> 83.7%<br>           <b>CNN confidence:</b> HIGH<br>           <b>Latest Sentinel scene:</b> 2026-07-12T00:30:08+00:00<br>           <b>Satellite age:</b> 6.29 days<br>           <b>Satellite freshness:</b> AGING<br>           <b>CNN effective weight:</b> 32.9%<br>           <b>LSTM weather score:</b> 58.7%<br>           <b>LSTM confidence:</b> HIGH<br>           <hr style="margin:7px 0">           <b>Rain, previous 24 h:</b> 4.70 mm<br>           <b>Rain, previous 72 h:</b> 10.80 mm<br>           <b>Humidity, previous 24 h:</b> 74.54%<br>           <b>Updated:</b> 2026-07-18T07:31:22.289971+00:00<br>           <p style="margin:8px 0 0 0">Meaningful combined flood-risk evidence. Verify river levels, drainage conditions, and district reports.</p>         </div>         </div>`)[0];
+                popup_4d0acc88ba7b939cad1105fa3c86bc73.setContent(html_ae09de43f01746f1a72191fb457cbb41);
+            
+        
+
+        circle_marker_da3c7c43ee1aed80529043c908226598.bindPopup(popup_4d0acc88ba7b939cad1105fa3c86bc73)
+        ;
+
+        
+    
+    
+            circle_marker_da3c7c43ee1aed80529043c908226598.bindTooltip(
+                `<div>
+                     Krishna: ORANGE (76.0%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_15ad08f29994c9c1fb0aea382004c189 = L.circleMarker(
+                [15.83, 78.04],
+                {"bubblingMouseEvents": true, "color": "#333333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffd92f", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.35173766187791, "stroke": true, "weight": 1}
+            ).addTo(feature_group_3e9136f3c27a250319f2bb59257046df);
+        
+    
+        var popup_1ce00a2e127b63d289b5408447c37c70 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_711a2e7dcbc7127dc1dcdf0d2cc60009 = $(`<div id="html_711a2e7dcbc7127dc1dcdf0d2cc60009" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Arial;min-width:260px">           <h4 style="margin:0 0 8px 0">Kurnool</h4>           <b>Hybrid alert:</b> YELLOW<br>           <b>Fusion score:</b> 55.7%<br>           <hr style="margin:7px 0">           <b>CNN satellite score:</b> 3.8%<br>           <b>CNN confidence:</b> LOW<br>           <b>Latest Sentinel scene:</b> 2026-07-17T00:38:40+00:00<br>           <b>Satellite age:</b> 1.29 days<br>           <b>Satellite freshness:</b> FRESH<br>           <b>CNN effective weight:</b> 35.0%<br>           <b>LSTM weather score:</b> 56.9%<br>           <b>LSTM confidence:</b> HIGH<br>           <hr style="margin:7px 0">           <b>Rain, previous 24 h:</b> 6.90 mm<br>           <b>Rain, previous 72 h:</b> 16.30 mm<br>           <b>Humidity, previous 24 h:</b> 72.21%<br>           <b>Updated:</b> 2026-07-18T07:32:05.415601+00:00<br>           <p style="margin:8px 0 0 0">Possible or borderline combined risk. Monitor updates and verify local reports.</p>         </div>         </div>`)[0];
+                popup_1ce00a2e127b63d289b5408447c37c70.setContent(html_711a2e7dcbc7127dc1dcdf0d2cc60009);
+            
+        
+
+        circle_marker_15ad08f29994c9c1fb0aea382004c189.bindPopup(popup_1ce00a2e127b63d289b5408447c37c70)
+        ;
+
+        
+    
+    
+            circle_marker_15ad08f29994c9c1fb0aea382004c189.bindTooltip(
+                `<div>
+                     Kurnool: YELLOW (55.7%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_530b2d345fc128364c2d57413acdb0ad = L.circleMarker(
+                [15.48, 78.48],
+                {"bubblingMouseEvents": true, "color": "#333333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffd92f", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.947671505300063, "stroke": true, "weight": 1}
+            ).addTo(feature_group_3e9136f3c27a250319f2bb59257046df);
+        
+    
+        var popup_e476a9f8afb2c9d8e5e09397ae490d3f = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_6250932198bbc1e87e4c4ebd9dfbd769 = $(`<div id="html_6250932198bbc1e87e4c4ebd9dfbd769" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Arial;min-width:260px">           <h4 style="margin:0 0 8px 0">Nandyal</h4>           <b>Hybrid alert:</b> YELLOW<br>           <b>Fusion score:</b> 59.7%<br>           <hr style="margin:7px 0">           <b>CNN satellite score:</b> 3.0%<br>           <b>CNN confidence:</b> LOW<br>           <b>Latest Sentinel scene:</b> 2026-07-17T00:38:40+00:00<br>           <b>Satellite age:</b> 1.29 days<br>           <b>Satellite freshness:</b> FRESH<br>           <b>CNN effective weight:</b> 35.0%<br>           <b>LSTM weather score:</b> 70.2%<br>           <b>LSTM confidence:</b> HIGH<br>           <hr style="margin:7px 0">           <b>Rain, previous 24 h:</b> 16.50 mm<br>           <b>Rain, previous 72 h:</b> 22.10 mm<br>           <b>Humidity, previous 24 h:</b> 71.96%<br>           <b>Updated:</b> 2026-07-18T07:32:53.916912+00:00<br>           <p style="margin:8px 0 0 0">Possible or borderline combined risk. Monitor updates and verify local reports.</p>         </div>         </div>`)[0];
+                popup_e476a9f8afb2c9d8e5e09397ae490d3f.setContent(html_6250932198bbc1e87e4c4ebd9dfbd769);
+            
+        
+
+        circle_marker_530b2d345fc128364c2d57413acdb0ad.bindPopup(popup_e476a9f8afb2c9d8e5e09397ae490d3f)
+        ;
+
+        
+    
+    
+            circle_marker_530b2d345fc128364c2d57413acdb0ad.bindTooltip(
+                `<div>
+                     Nandyal: YELLOW (59.7%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cbb2289ac1811db3518ec2c831de8d28 = L.circleMarker(
+                [16.51, 80.65],
+                {"bubblingMouseEvents": true, "color": "#333333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.063421334025318, "stroke": true, "weight": 1}
+            ).addTo(feature_group_3e9136f3c27a250319f2bb59257046df);
+        
+    
+        var popup_e52bbd433e45774d1f0ad4fc0a69c4e6 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_3632a6cc948b55c7c653ed7d39bb752e = $(`<div id="html_3632a6cc948b55c7c653ed7d39bb752e" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Arial;min-width:260px">           <h4 style="margin:0 0 8px 0">NTR (Vijayawada)</h4>           <b>Hybrid alert:</b> ORANGE<br>           <b>Fusion score:</b> 67.1%<br>           <hr style="margin:7px 0">           <b>CNN satellite score:</b> 6.5%<br>           <b>CNN confidence:</b> LOW<br>           <b>Latest Sentinel scene:</b> 2026-07-12T00:30:08+00:00<br>           <b>Satellite age:</b> 6.29 days<br>           <b>Satellite freshness:</b> AGING<br>           <b>CNN effective weight:</b> 24.4%<br>           <b>LSTM weather score:</b> 63.9%<br>           <b>LSTM confidence:</b> HIGH<br>           <hr style="margin:7px 0">           <b>Rain, previous 24 h:</b> 8.40 mm<br>           <b>Rain, previous 72 h:</b> 12.30 mm<br>           <b>Humidity, previous 24 h:</b> 76.75%<br>           <b>Updated:</b> 2026-07-18T07:33:42.642377+00:00<br>           <p style="margin:8px 0 0 0">Meaningful combined flood-risk evidence. Verify river levels, drainage conditions, and district reports.</p>         </div>         </div>`)[0];
+                popup_e52bbd433e45774d1f0ad4fc0a69c4e6.setContent(html_3632a6cc948b55c7c653ed7d39bb752e);
+            
+        
+
+        circle_marker_cbb2289ac1811db3518ec2c831de8d28.bindPopup(popup_e52bbd433e45774d1f0ad4fc0a69c4e6)
+        ;
+
+        
+    
+    
+            circle_marker_cbb2289ac1811db3518ec2c831de8d28.bindTooltip(
+                `<div>
+                     NTR (Vijayawada): ORANGE (67.1%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_80a3e4db936b81069850546e77e2970d = L.circleMarker(
+                [16.24, 80.05],
+                {"bubblingMouseEvents": true, "color": "#333333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffd92f", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.787103269136715, "stroke": true, "weight": 1}
+            ).addTo(feature_group_3e9136f3c27a250319f2bb59257046df);
+        
+    
+        var popup_50842a921a38ac692e34bce49cc3d632 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_9a531b94634deefdae873f37dcf03b35 = $(`<div id="html_9a531b94634deefdae873f37dcf03b35" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Arial;min-width:260px">           <h4 style="margin:0 0 8px 0">Palnadu</h4>           <b>Hybrid alert:</b> YELLOW<br>           <b>Fusion score:</b> 51.9%<br>           <hr style="margin:7px 0">           <b>CNN satellite score:</b> 1.5%<br>           <b>CNN confidence:</b> LOW<br>           <b>Latest Sentinel scene:</b> 2026-07-12T00:30:33+00:00<br>           <b>Satellite age:</b> 6.29 days<br>           <b>Satellite freshness:</b> AGING<br>           <b>CNN effective weight:</b> 24.4%<br>           <b>LSTM weather score:</b> 53.3%<br>           <b>LSTM confidence:</b> HIGH<br>           <hr style="margin:7px 0">           <b>Rain, previous 24 h:</b> 2.90 mm<br>           <b>Rain, previous 72 h:</b> 9.20 mm<br>           <b>Humidity, previous 24 h:</b> 72.00%<br>           <b>Updated:</b> 2026-07-18T07:34:34.691677+00:00<br>           <p style="margin:8px 0 0 0">Possible or borderline combined risk. Monitor updates and verify local reports.</p>         </div>         </div>`)[0];
+                popup_50842a921a38ac692e34bce49cc3d632.setContent(html_9a531b94634deefdae873f37dcf03b35);
+            
+        
+
+        circle_marker_80a3e4db936b81069850546e77e2970d.bindPopup(popup_50842a921a38ac692e34bce49cc3d632)
+        ;
+
+        
+    
+    
+            circle_marker_80a3e4db936b81069850546e77e2970d.bindTooltip(
+                `<div>
+                     Palnadu: YELLOW (51.9%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_241128906f844c2eee7c3d6d5f6eed57 = L.circleMarker(
+                [18.78, 83.43],
+                {"bubblingMouseEvents": true, "color": "#333333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.06704444613154, "stroke": true, "weight": 1}
+            ).addTo(feature_group_3e9136f3c27a250319f2bb59257046df);
+        
+    
+        var popup_5fe7b2676e6f8eab396a5bb8ea6f33ba = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_255489bcd117962c5a0ab3db4ad026c5 = $(`<div id="html_255489bcd117962c5a0ab3db4ad026c5" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Arial;min-width:260px">           <h4 style="margin:0 0 8px 0">Parvathipuram Manyam</h4>           <b>Hybrid alert:</b> ORANGE<br>           <b>Fusion score:</b> 60.4%<br>           <hr style="margin:7px 0">           <b>CNN satellite score:</b> 1.7%<br>           <b>CNN confidence:</b> LOW<br>           <b>Latest Sentinel scene:</b> 2026-07-14T00:13:05+00:00<br>           <b>Satellite age:</b> 4.31 days<br>           <b>Satellite freshness:</b> RECENT<br>           <b>CNN effective weight:</b> 31.4%<br>           <b>LSTM weather score:</b> 75.1%<br>           <b>LSTM confidence:</b> HIGH<br>           <hr style="margin:7px 0">           <b>Rain, previous 24 h:</b> 14.10 mm<br>           <b>Rain, previous 72 h:</b> 48.50 mm<br>           <b>Humidity, previous 24 h:</b> 89.50%<br>           <b>Updated:</b> 2026-07-18T07:35:25.873644+00:00<br>           <p style="margin:8px 0 0 0">Meaningful combined flood-risk evidence. Verify river levels, drainage conditions, and district reports.</p>         </div>         </div>`)[0];
+                popup_5fe7b2676e6f8eab396a5bb8ea6f33ba.setContent(html_255489bcd117962c5a0ab3db4ad026c5);
+            
+        
+
+        circle_marker_241128906f844c2eee7c3d6d5f6eed57.bindPopup(popup_5fe7b2676e6f8eab396a5bb8ea6f33ba)
+        ;
+
+        
+    
+    
+            circle_marker_241128906f844c2eee7c3d6d5f6eed57.bindTooltip(
+                `<div>
+                     Parvathipuram Manyam: ORANGE (60.4%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b3aa24d4ab98fa01cd7140a185dab491 = L.circleMarker(
+                [15.5, 80.05],
+                {"bubblingMouseEvents": true, "color": "#333333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.217380908336665, "stroke": true, "weight": 1}
+            ).addTo(feature_group_3e9136f3c27a250319f2bb59257046df);
+        
+    
+        var popup_d4605ef0da8029a0b1df7893f5467317 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_e65142de28ad94005482ab4a6345c974 = $(`<div id="html_e65142de28ad94005482ab4a6345c974" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Arial;min-width:260px">           <h4 style="margin:0 0 8px 0">Prakasam</h4>           <b>Hybrid alert:</b> ORANGE<br>           <b>Fusion score:</b> 68.1%<br>           <hr style="margin:7px 0">           <b>CNN satellite score:</b> 51.4%<br>           <b>CNN confidence:</b> HIGH<br>           <b>Latest Sentinel scene:</b> 2026-07-12T00:30:33+00:00<br>           <b>Satellite age:</b> 6.29 days<br>           <b>Satellite freshness:</b> AGING<br>           <b>CNN effective weight:</b> 32.9%<br>           <b>LSTM weather score:</b> 54.3%<br>           <b>LSTM confidence:</b> HIGH<br>           <hr style="margin:7px 0">           <b>Rain, previous 24 h:</b> 4.90 mm<br>           <b>Rain, previous 72 h:</b> 12.20 mm<br>           <b>Humidity, previous 24 h:</b> 70.38%<br>           <b>Updated:</b> 2026-07-18T07:36:12.384336+00:00<br>           <p style="margin:8px 0 0 0">Meaningful combined flood-risk evidence. Verify river levels, drainage conditions, and district reports.</p>         </div>         </div>`)[0];
+                popup_d4605ef0da8029a0b1df7893f5467317.setContent(html_e65142de28ad94005482ab4a6345c974);
+            
+        
+
+        circle_marker_b3aa24d4ab98fa01cd7140a185dab491.bindPopup(popup_d4605ef0da8029a0b1df7893f5467317)
+        ;
+
+        
+    
+    
+            circle_marker_b3aa24d4ab98fa01cd7140a185dab491.bindTooltip(
+                `<div>
+                     Prakasam: ORANGE (68.1%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b9f9eea72626c457dc02a435c7ad2c5b = L.circleMarker(
+                [14.44, 79.99],
+                {"bubblingMouseEvents": true, "color": "#333333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.722457440924142, "stroke": true, "weight": 1}
+            ).addTo(feature_group_3e9136f3c27a250319f2bb59257046df);
+        
+    
+        var popup_e20b8222b566ee5b1bb57a7cc8cc4be8 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_469aa3d7eb368572d3ba7946cafafdf3 = $(`<div id="html_469aa3d7eb368572d3ba7946cafafdf3" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Arial;min-width:260px">           <h4 style="margin:0 0 8px 0">SPSR Nellore</h4>           <b>Hybrid alert:</b> ORANGE<br>           <b>Fusion score:</b> 64.8%<br>           <hr style="margin:7px 0">           <b>CNN satellite score:</b> 8.5%<br>           <b>CNN confidence:</b> LOW<br>           <b>Latest Sentinel scene:</b> 2026-07-12T00:30:58+00:00<br>           <b>Satellite age:</b> 6.29 days<br>           <b>Satellite freshness:</b> AGING<br>           <b>CNN effective weight:</b> 24.4%<br>           <b>LSTM weather score:</b> 59.5%<br>           <b>LSTM confidence:</b> HIGH<br>           <hr style="margin:7px 0">           <b>Rain, previous 24 h:</b> 10.20 mm<br>           <b>Rain, previous 72 h:</b> 10.50 mm<br>           <b>Humidity, previous 24 h:</b> 70.42%<br>           <b>Updated:</b> 2026-07-18T07:37:02.508920+00:00<br>           <p style="margin:8px 0 0 0">Meaningful combined flood-risk evidence. Verify river levels, drainage conditions, and district reports.</p>         </div>         </div>`)[0];
+                popup_e20b8222b566ee5b1bb57a7cc8cc4be8.setContent(html_469aa3d7eb368572d3ba7946cafafdf3);
+            
+        
+
+        circle_marker_b9f9eea72626c457dc02a435c7ad2c5b.bindPopup(popup_e20b8222b566ee5b1bb57a7cc8cc4be8)
+        ;
+
+        
+    
+    
+            circle_marker_b9f9eea72626c457dc02a435c7ad2c5b.bindTooltip(
+                `<div>
+                     SPSR Nellore: ORANGE (64.8%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d6b909f075b9a237b6894e6266855081 = L.circleMarker(
+                [14.17, 77.81],
+                {"bubblingMouseEvents": true, "color": "#333333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffd92f", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.82996982914938, "stroke": true, "weight": 1}
+            ).addTo(feature_group_3e9136f3c27a250319f2bb59257046df);
+        
+    
+        var popup_aa652f409e48dbf86caa7d1ec3fb7fc3 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_7e5b16f1ba0f4b94d44cbd23bcc8d447 = $(`<div id="html_7e5b16f1ba0f4b94d44cbd23bcc8d447" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Arial;min-width:260px">           <h4 style="margin:0 0 8px 0">Sri Sathya Sai</h4>           <b>Hybrid alert:</b> YELLOW<br>           <b>Fusion score:</b> 38.9%<br>           <hr style="margin:7px 0">           <b>CNN satellite score:</b> 1.3%<br>           <b>CNN confidence:</b> LOW<br>           <b>Latest Sentinel scene:</b> 2026-07-17T00:39:05+00:00<br>           <b>Satellite age:</b> 1.29 days<br>           <b>Satellite freshness:</b> FRESH<br>           <b>CNN effective weight:</b> 35.0%<br>           <b>LSTM weather score:</b> 39.2%<br>           <b>LSTM confidence:</b> LOW<br>           <hr style="margin:7px 0">           <b>Rain, previous 24 h:</b> 14.20 mm<br>           <b>Rain, previous 72 h:</b> 17.00 mm<br>           <b>Humidity, previous 24 h:</b> 69.96%<br>           <b>Updated:</b> 2026-07-18T07:37:52.373636+00:00<br>           <p style="margin:8px 0 0 0">Possible or borderline combined risk. Monitor updates and verify local reports.</p>         </div>         </div>`)[0];
+                popup_aa652f409e48dbf86caa7d1ec3fb7fc3.setContent(html_7e5b16f1ba0f4b94d44cbd23bcc8d447);
+            
+        
+
+        circle_marker_d6b909f075b9a237b6894e6266855081.bindPopup(popup_aa652f409e48dbf86caa7d1ec3fb7fc3)
+        ;
+
+        
+    
+    
+            circle_marker_d6b909f075b9a237b6894e6266855081.bindTooltip(
+                `<div>
+                     Sri Sathya Sai: YELLOW (38.9%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a88e9f592350f57ba718710d7aba01d1 = L.circleMarker(
+                [18.29, 83.9],
+                {"bubblingMouseEvents": true, "color": "#333333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d62728", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20.410043966259202, "stroke": true, "weight": 1}
+            ).addTo(feature_group_3e9136f3c27a250319f2bb59257046df);
+        
+    
+        var popup_f0a401d99349a1f4da86662fcc931a40 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_6eb1d1887c2a5b1f39759a684118c2b2 = $(`<div id="html_6eb1d1887c2a5b1f39759a684118c2b2" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Arial;min-width:260px">           <h4 style="margin:0 0 8px 0">Srikakulam</h4>           <b>Hybrid alert:</b> RED<br>           <b>Fusion score:</b> 89.4%<br>           <hr style="margin:7px 0">           <b>CNN satellite score:</b> 85.9%<br>           <b>CNN confidence:</b> HIGH<br>           <b>Latest Sentinel scene:</b> 2026-07-14T00:13:30+00:00<br>           <b>Satellite age:</b> 4.31 days<br>           <b>Satellite freshness:</b> RECENT<br>           <b>CNN effective weight:</b> 41.0%<br>           <b>LSTM weather score:</b> 83.3%<br>           <b>LSTM confidence:</b> HIGH<br>           <hr style="margin:7px 0">           <b>Rain, previous 24 h:</b> 21.80 mm<br>           <b>Rain, previous 72 h:</b> 56.50 mm<br>           <b>Humidity, previous 24 h:</b> 89.50%<br>           <b>Updated:</b> 2026-07-18T07:38:42.817825+00:00<br>           <p style="margin:8px 0 0 0">Strong usable satellite and weather evidence. Escalate for official verification and emergency decision-making.</p>         </div>         </div>`)[0];
+                popup_f0a401d99349a1f4da86662fcc931a40.setContent(html_6eb1d1887c2a5b1f39759a684118c2b2);
+            
+        
+
+        circle_marker_a88e9f592350f57ba718710d7aba01d1.bindPopup(popup_f0a401d99349a1f4da86662fcc931a40)
+        ;
+
+        
+    
+    
+            circle_marker_a88e9f592350f57ba718710d7aba01d1.bindTooltip(
+                `<div>
+                     Srikakulam: RED (89.4%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a5042252efdf775c546c6b408a66aa76 = L.circleMarker(
+                [13.63, 79.42],
+                {"bubblingMouseEvents": true, "color": "#333333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.224622056630583, "stroke": true, "weight": 1}
+            ).addTo(feature_group_3e9136f3c27a250319f2bb59257046df);
+        
+    
+        var popup_ac080dc5c10b9fd14b913c2cbe5613ac = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_9a0a3f3f7a67f816d078c4a3d15010f2 = $(`<div id="html_9a0a3f3f7a67f816d078c4a3d15010f2" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Arial;min-width:260px">           <h4 style="margin:0 0 8px 0">Tirupati</h4>           <b>Hybrid alert:</b> ORANGE<br>           <b>Fusion score:</b> 61.5%<br>           <hr style="margin:7px 0">           <b>CNN satellite score:</b> 1.4%<br>           <b>CNN confidence:</b> LOW<br>           <b>Latest Sentinel scene:</b> 2026-07-12T00:30:58+00:00<br>           <b>Satellite age:</b> 6.30 days<br>           <b>Satellite freshness:</b> AGING<br>           <b>CNN effective weight:</b> 24.4%<br>           <b>LSTM weather score:</b> 70.0%<br>           <b>LSTM confidence:</b> HIGH<br>           <hr style="margin:7px 0">           <b>Rain, previous 24 h:</b> 21.20 mm<br>           <b>Rain, previous 72 h:</b> 21.70 mm<br>           <b>Humidity, previous 24 h:</b> 72.08%<br>           <b>Updated:</b> 2026-07-18T07:39:30.995891+00:00<br>           <p style="margin:8px 0 0 0">Meaningful combined flood-risk evidence. Verify river levels, drainage conditions, and district reports.</p>         </div>         </div>`)[0];
+                popup_ac080dc5c10b9fd14b913c2cbe5613ac.setContent(html_9a0a3f3f7a67f816d078c4a3d15010f2);
+            
+        
+
+        circle_marker_a5042252efdf775c546c6b408a66aa76.bindPopup(popup_ac080dc5c10b9fd14b913c2cbe5613ac)
+        ;
+
+        
+    
+    
+            circle_marker_a5042252efdf775c546c6b408a66aa76.bindTooltip(
+                `<div>
+                     Tirupati: ORANGE (61.5%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0ca29efd90e9718f412753f9f90c6389 = L.circleMarker(
+                [17.69, 83.22],
+                {"bubblingMouseEvents": true, "color": "#333333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18.474693056103725, "stroke": true, "weight": 1}
+            ).addTo(feature_group_3e9136f3c27a250319f2bb59257046df);
+        
+    
+        var popup_7ad6c0395b2a0dcd1032464ecb371b99 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_8457e24ee5b37bb11b05f88c2a54ffc7 = $(`<div id="html_8457e24ee5b37bb11b05f88c2a54ffc7" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Arial;min-width:260px">           <h4 style="margin:0 0 8px 0">Visakhapatnam</h4>           <b>Hybrid alert:</b> ORANGE<br>           <b>Fusion score:</b> 76.5%<br>           <hr style="margin:7px 0">           <b>CNN satellite score:</b> 86.9%<br>           <b>CNN confidence:</b> HIGH<br>           <b>Latest Sentinel scene:</b> 2026-07-07T00:21:36+00:00<br>           <b>Satellite age:</b> 11.28 days<br>           <b>Satellite freshness:</b> AGING<br>           <b>CNN effective weight:</b> 32.9%<br>           <b>LSTM weather score:</b> 58.6%<br>           <b>LSTM confidence:</b> HIGH<br>           <hr style="margin:7px 0">           <b>Rain, previous 24 h:</b> 4.80 mm<br>           <b>Rain, previous 72 h:</b> 7.70 mm<br>           <b>Humidity, previous 24 h:</b> 80.50%<br>           <b>Updated:</b> 2026-07-18T07:01:15.757409+00:00<br>           <p style="margin:8px 0 0 0">Meaningful combined flood-risk evidence. Verify river levels, drainage conditions, and district reports.</p>         </div>         </div>`)[0];
+                popup_7ad6c0395b2a0dcd1032464ecb371b99.setContent(html_8457e24ee5b37bb11b05f88c2a54ffc7);
+            
+        
+
+        circle_marker_0ca29efd90e9718f412753f9f90c6389.bindPopup(popup_7ad6c0395b2a0dcd1032464ecb371b99)
+        ;
+
+        
+    
+    
+            circle_marker_0ca29efd90e9718f412753f9f90c6389.bindTooltip(
+                `<div>
+                     Visakhapatnam: ORANGE (76.5%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5f367c5f0b057ff4dadc9062e564ac8e = L.circleMarker(
+                [18.1, 83.4],
+                {"bubblingMouseEvents": true, "color": "#333333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffd92f", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.73294683513667, "stroke": true, "weight": 1}
+            ).addTo(feature_group_3e9136f3c27a250319f2bb59257046df);
+        
+    
+        var popup_0d7784763da70acb5d7b8fcf13a255ee = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_c3cc993282921ba2db974fe7a9c693aa = $(`<div id="html_c3cc993282921ba2db974fe7a9c693aa" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Arial;min-width:260px">           <h4 style="margin:0 0 8px 0">Vizianagaram</h4>           <b>Hybrid alert:</b> YELLOW<br>           <b>Fusion score:</b> 58.2%<br>           <hr style="margin:7px 0">           <b>CNN satellite score:</b> 1.4%<br>           <b>CNN confidence:</b> LOW<br>           <b>Latest Sentinel scene:</b> 2026-07-14T00:13:30+00:00<br>           <b>Satellite age:</b> 4.31 days<br>           <b>Satellite freshness:</b> RECENT<br>           <b>CNN effective weight:</b> 31.4%<br>           <b>LSTM weather score:</b> 72.7%<br>           <b>LSTM confidence:</b> HIGH<br>           <hr style="margin:7px 0">           <b>Rain, previous 24 h:</b> 11.60 mm<br>           <b>Rain, previous 72 h:</b> 13.40 mm<br>           <b>Humidity, previous 24 h:</b> 88.71%<br>           <b>Updated:</b> 2026-07-18T07:40:53.962500+00:00<br>           <p style="margin:8px 0 0 0">Possible or borderline combined risk. Monitor updates and verify local reports.</p>         </div>         </div>`)[0];
+                popup_0d7784763da70acb5d7b8fcf13a255ee.setContent(html_c3cc993282921ba2db974fe7a9c693aa);
+            
+        
+
+        circle_marker_5f367c5f0b057ff4dadc9062e564ac8e.bindPopup(popup_0d7784763da70acb5d7b8fcf13a255ee)
+        ;
+
+        
+    
+    
+            circle_marker_5f367c5f0b057ff4dadc9062e564ac8e.bindTooltip(
+                `<div>
+                     Vizianagaram: YELLOW (58.2%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5ca002c17b7644524fde5ea33703fe65 = L.circleMarker(
+                [16.54, 81.52],
+                {"bubblingMouseEvents": true, "color": "#333333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f28e2b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.70763979558592, "stroke": true, "weight": 1}
+            ).addTo(feature_group_3e9136f3c27a250319f2bb59257046df);
+        
+    
+        var popup_eb4423640d9e16f238e9be741ed068a6 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_59cc316cd1603c5ef936effd98784547 = $(`<div id="html_59cc316cd1603c5ef936effd98784547" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Arial;min-width:260px">           <h4 style="margin:0 0 8px 0">West Godavari</h4>           <b>Hybrid alert:</b> ORANGE<br>           <b>Fusion score:</b> 71.4%<br>           <hr style="margin:7px 0">           <b>CNN satellite score:</b> 5.2%<br>           <b>CNN confidence:</b> LOW<br>           <b>Latest Sentinel scene:</b> 2026-07-12T00:30:08+00:00<br>           <b>Satellite age:</b> 6.30 days<br>           <b>Satellite freshness:</b> AGING<br>           <b>CNN effective weight:</b> 24.4%<br>           <b>LSTM weather score:</b> 72.6%<br>           <b>LSTM confidence:</b> HIGH<br>           <hr style="margin:7px 0">           <b>Rain, previous 24 h:</b> 14.80 mm<br>           <b>Rain, previous 72 h:</b> 17.90 mm<br>           <b>Humidity, previous 24 h:</b> 78.88%<br>           <b>Updated:</b> 2026-07-18T07:41:43.670363+00:00<br>           <p style="margin:8px 0 0 0">Meaningful combined flood-risk evidence. Verify river levels, drainage conditions, and district reports.</p>         </div>         </div>`)[0];
+                popup_eb4423640d9e16f238e9be741ed068a6.setContent(html_59cc316cd1603c5ef936effd98784547);
+            
+        
+
+        circle_marker_5ca002c17b7644524fde5ea33703fe65.bindPopup(popup_eb4423640d9e16f238e9be741ed068a6)
+        ;
+
+        
+    
+    
+            circle_marker_5ca002c17b7644524fde5ea33703fe65.bindTooltip(
+                `<div>
+                     West Godavari: ORANGE (71.4%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fa85cdaf36b1cc79abcabea4529b5c0c = L.circleMarker(
+                [14.47, 78.82],
+                {"bubblingMouseEvents": true, "color": "#333333", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffd92f", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.91356489818096, "stroke": true, "weight": 1}
+            ).addTo(feature_group_3e9136f3c27a250319f2bb59257046df);
+        
+    
+        var popup_2c9b092c8acfb999e80399c7edcb21b6 = L.popup({
+  "maxWidth": 360,
+});
+
+        
+            
+                var html_2a231fa8d5ed67c61fc30a2e4e9d044c = $(`<div id="html_2a231fa8d5ed67c61fc30a2e4e9d044c" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Arial;min-width:260px">           <h4 style="margin:0 0 8px 0">YSR Kadapa</h4>           <b>Hybrid alert:</b> YELLOW<br>           <b>Fusion score:</b> 52.8%<br>           <hr style="margin:7px 0">           <b>CNN satellite score:</b> 2.0%<br>           <b>CNN confidence:</b> LOW<br>           <b>Latest Sentinel scene:</b> 2026-07-17T00:39:05+00:00<br>           <b>Satellite age:</b> 1.29 days<br>           <b>Satellite freshness:</b> FRESH<br>           <b>CNN effective weight:</b> 35.0%<br>           <b>LSTM weather score:</b> 62.2%<br>           <b>LSTM confidence:</b> HIGH<br>           <hr style="margin:7px 0">           <b>Rain, previous 24 h:</b> 23.90 mm<br>           <b>Rain, previous 72 h:</b> 52.60 mm<br>           <b>Humidity, previous 24 h:</b> 68.46%<br>           <b>Updated:</b> 2026-07-18T07:42:26.824570+00:00<br>           <p style="margin:8px 0 0 0">Possible or borderline combined risk. Monitor updates and verify local reports.</p>         </div>         </div>`)[0];
+                popup_2c9b092c8acfb999e80399c7edcb21b6.setContent(html_2a231fa8d5ed67c61fc30a2e4e9d044c);
+            
+        
+
+        circle_marker_fa85cdaf36b1cc79abcabea4529b5c0c.bindPopup(popup_2c9b092c8acfb999e80399c7edcb21b6)
+        ;
+
+        
+    
+    
+            circle_marker_fa85cdaf36b1cc79abcabea4529b5c0c.bindTooltip(
+                `<div>
+                     YSR Kadapa: YELLOW (52.8%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_3e9136f3c27a250319f2bb59257046df.addTo(map_5be06d6364b2abeff1c0d9662e656df8);
+        
+    
+            var feature_group_f62882b84625fedc3fe2262af3e51343 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var heat_map_e82726fd9437139bee78586733ed8540 = L.heatLayer(
+                [[18.08, 82.66, 0.5169084150675222], [17.69, 83.0, 0.5536563449705616], [14.68, 77.6, 0.4492047830371705], [14.05, 78.75, 0.48102898871866084], [15.9, 80.47, 0.7634597456188574], [13.22, 79.1, 0.5658255240218785], [16.99, 81.78, 0.7811971836959879], [16.71, 81.1, 0.6577142997930463], [16.31, 80.44, 0.5908803888623724], [16.99, 82.25, 0.7764913430888529], [16.58, 82.01, 0.7669262325877533], [16.18, 81.13, 0.7600369212677953], [15.83, 78.04, 0.5567825107918607], [15.48, 78.48, 0.5965114336866708], [16.51, 80.65, 0.6708947556016879], [16.24, 80.05, 0.5191402179424477], [18.78, 83.43, 0.6044696297421027], [15.5, 80.05, 0.6811587272224444], [14.44, 79.99, 0.6481638293949428], [14.17, 77.81, 0.3886646552766253], [18.29, 83.9, 0.8940029310839468], [13.63, 79.42, 0.6149748037753722], [17.69, 83.22, 0.7649795370735818], [18.1, 83.4, 0.5821964556757779], [16.54, 81.52, 0.7138426530390611], [14.47, 78.82, 0.527570993212064]],
+                {
+  "minOpacity": 0.2,
+  "maxZoom": 18,
+  "radius": 28,
+  "blur": 24,
+  "gradient": {
+  0.0: "#2ca25f",
+  0.35: "#ffd92f",
+  0.6: "#f28e2b",
+  0.8: "#d62728",
+},
+  "maxOpacity": 0.8,
+}
+            );
+        
+    
+            heat_map_e82726fd9437139bee78586733ed8540.addTo(feature_group_f62882b84625fedc3fe2262af3e51343);
+        
+    
+            var layer_control_f41bb3c070014cc2e576b693e86aead6_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_f5384a9461c75d05080ddddb2615807a,
+                },
+                overlays :  {
+                    "District hybrid alerts" : feature_group_3e9136f3c27a250319f2bb59257046df,
+                    "Hybrid fusion heat map" : feature_group_f62882b84625fedc3fe2262af3e51343,
+                },
+            };
+            let layer_control_f41bb3c070014cc2e576b693e86aead6 = L.control.layers(
+                layer_control_f41bb3c070014cc2e576b693e86aead6_layers.base_layers,
+                layer_control_f41bb3c070014cc2e576b693e86aead6_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_5be06d6364b2abeff1c0d9662e656df8);
+
+        
+</script>
+</html>

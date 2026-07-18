@@ -1,44 +1,65 @@
-﻿# Python
+﻿# Python environment
+.venv/
+venv/
+env/
+
+# Python cache
 __pycache__/
 *.py[cod]
-*.pyo
-.env
-venv/
-.venv/
-env/
-.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
 
-# Model weights (too large for GitHub)
-*.h5
-*.keras
-*.pkl
-*.joblib
+# Local IDE files
+.vscode/
+.idea/
 
-# Generated outputs (reproducible, don't commit)
-outputs/flood_risk_maps/*.npy
-outputs/flood_risk_maps/*.html
-outputs/predictions/*.npy
-
-# Logs (generated at runtime)
-outputs/predictions/alert_log.csv
-outputs/sms_log.csv
-
-# Credentials - NEVER commit these
-config/sms_config.json
-*.env
-secrets.json
-
-# Data files (too large)
-data/raw/*.csv
-data/processed/*.npy
-data/processed/*.npz
-
-# OS junk
+# Operating system files
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# IDE
-.vscode/
-.idea/
-*.swp
+# Sensitive configuration
+config/sms_config.json
+.env
+.env.*
+!.env.example
+
+# Authentication and secrets
+*.pem
+*.key
+credentials.json
+service-account*.json
+
+# Runtime temporary files
+*.tmp
+*.temp
+*.bak
+*.log
+
+# Local maintenance
+maintenance_reports/
+cleanup_reports/
+runtime_fix_new/
+main_update_new/
+dashboard_ui_fix_new/
+docs_update/
+backup_before_ui_fix/
+legacy/
+
+# Training checkpoints
+models/cnn_checkpoints/
+models/lstm_checkpoints/
+
+# Generated Python build files
+build/
+dist/
+*.egg-info/
+
+# Local scheduled-task logs
+outputs/reports/*.log
+outputs/predictions/dashboard_state.json
+
+# SMS runtime history may contain recipient information
+outputs/predictions/sms_log.csv

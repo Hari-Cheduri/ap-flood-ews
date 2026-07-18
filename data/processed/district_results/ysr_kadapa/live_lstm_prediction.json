@@ -1,0 +1,19 @@
+{
+  "created_utc": "2026-07-18T07:42:25.636701+00:00",
+  "contract": "open_meteo_hourly_72x6_v1",
+  "model_status": "usable_prototype",
+  "location_name": "ysr_kadapa",
+  "latitude": 14.47,
+  "longitude": 78.82,
+  "probability": 0.6219547986984253,
+  "threshold": 0.3449999999999999,
+  "prediction": 1,
+  "prediction_label": "HIGH_WEATHER_RISK",
+  "confidence": "HIGH",
+  "weather_summary": {
+    "rain_last_24h_mm": 23.899999618530273,
+    "rain_last_72h_mm": 52.599998474121094,
+    "mean_humidity_last_24h": 68.45833587646484
+  },
+  "interpretation": "Next-24-hour weather-driven flood-risk proxy, not confirmed inundation."
+}

@@ -1,0 +1,41 @@
+{
+  "cnn_threshold": 0.055,
+  "contract": "sentinel1_png_rgb_v1",
+  "selected_trial": 2,
+  "selection_method": "0.65*balanced_accuracy + 0.35*f1 with one-class penalty",
+  "validation_metrics": {
+    "threshold": 0.055,
+    "accuracy": 0.9090909090909091,
+    "balanced_accuracy": 0.9444444444444444,
+    "precision": 0.6666666666666666,
+    "recall": 1.0,
+    "specificity": 0.8888888888888888,
+    "f1": 0.8,
+    "mcc": 0.769800358919501,
+    "confusion_matrix": [
+      [
+        16,
+        2
+      ],
+      [
+        0,
+        4
+      ]
+    ],
+    "predicted_non_flood": 16,
+    "predicted_flood": 6,
+    "roc_auc": 0.9444444444444444,
+    "pr_auc": 0.8166666666666667,
+    "probability_stats": {
+      "min": 0.011333014816045761,
+      "max": 0.8582898378372192,
+      "mean": 0.17139609158039093,
+      "std": 0.2953588664531708,
+      "p05": 0.012054246012121439,
+      "p95": 0.8548911511898041,
+      "spread_p95_p05": 0.8428369051776826
+    },
+    "compressed_probability_warning": false,
+    "collapsed_probability_warning": false
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-07-18T07:42:12.736885+00:00",
+  "contract": "open_meteo_hourly_72x6_v1",
+  "location_name": "ysr_kadapa",
+  "latitude": 14.47,
+  "longitude": 78.82,
+  "features": [
+    "temperature_2m",
+    "relative_humidity_2m",
+    "precipitation",
+    "rain",
+    "wind_speed_10m",
+    "surface_pressure"
+  ],
+  "shape": [
+    72,
+    6
+  ],
+  "start_time": "2026-07-15T14:00",
+  "end_time": "2026-07-18T13:00",
+  "raw_summary": {
+    "rain_last_24h_mm": 23.899999618530273,
+    "rain_last_72h_mm": 52.599998474121094,
+    "mean_humidity_last_24h": 68.45833587646484
+  }
+}

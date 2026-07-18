@@ -1,0 +1,87 @@
+{
+  "generated_utc": "2026-07-18T07:48:09.866391+00:00",
+  "source_generated_utc": "2026-07-18T07:48:05.496109+00:00",
+  "source": "C:\\Users\\user\\Desktop\\flood_monitor_clean\\data\\processed\\ap_district_risk.json",
+  "district_count": 26,
+  "successful_count": 26,
+  "alert_counts": {
+    "GREEN": 0,
+    "YELLOW": 12,
+    "ORANGE": 13,
+    "RED": 1,
+    "UNKNOWN": 0
+  },
+  "top_risk_districts": [
+    {
+      "district_slug": "srikakulam",
+      "district_name": "Srikakulam",
+      "alert_level": "RED",
+      "fusion_score": 0.8940029310839468,
+      "message": "Strong usable satellite and weather evidence. Escalate for official verification and emergency decision-making."
+    },
+    {
+      "district_slug": "east_godavari",
+      "district_name": "East Godavari",
+      "alert_level": "ORANGE",
+      "fusion_score": 0.7811971836959879,
+      "message": "Meaningful combined flood-risk evidence. Verify river levels, drainage conditions, and district reports."
+    },
+    {
+      "district_slug": "kakinada",
+      "district_name": "Kakinada",
+      "alert_level": "ORANGE",
+      "fusion_score": 0.7764913430888529,
+      "message": "Meaningful combined flood-risk evidence. Verify river levels, drainage conditions, and district reports."
+    },
+    {
+      "district_slug": "dr_br_ambedkar_konaseema",
+      "district_name": "Dr. B.R. Ambedkar Konaseema",
+      "alert_level": "ORANGE",
+      "fusion_score": 0.7669262325877533,
+      "message": "Meaningful combined flood-risk evidence. Verify river levels, drainage conditions, and district reports."
+    },
+    {
+      "district_slug": "visakhapatnam",
+      "district_name": "Visakhapatnam",
+      "alert_level": "ORANGE",
+      "fusion_score": 0.7649795370735818,
+      "message": "Meaningful combined flood-risk evidence. Verify river levels, drainage conditions, and district reports."
+    },
+    {
+      "district_slug": "bapatla",
+      "district_name": "Bapatla",
+      "alert_level": "ORANGE",
+      "fusion_score": 0.7634597456188574,
+      "message": "Meaningful combined flood-risk evidence. Verify river levels, drainage conditions, and district reports."
+    },
+    {
+      "district_slug": "krishna",
+      "district_name": "Krishna",
+      "alert_level": "ORANGE",
+      "fusion_score": 0.7600369212677953,
+      "message": "Meaningful combined flood-risk evidence. Verify river levels, drainage conditions, and district reports."
+    },
+    {
+      "district_slug": "west_godavari",
+      "district_name": "West Godavari",
+      "alert_level": "ORANGE",
+      "fusion_score": 0.7138426530390611,
+      "message": "Meaningful combined flood-risk evidence. Verify river levels, drainage conditions, and district reports."
+    },
+    {
+      "district_slug": "prakasam",
+      "district_name": "Prakasam",
+      "alert_level": "ORANGE",
+      "fusion_score": 0.6811587272224444,
+      "message": "Meaningful combined flood-risk evidence. Verify river levels, drainage conditions, and district reports."
+    },
+    {
+      "district_slug": "ntr_vijayawada",
+      "district_name": "NTR (Vijayawada)",
+      "alert_level": "ORANGE",
+      "fusion_score": 0.6708947556016879,
+      "message": "Meaningful combined flood-risk evidence. Verify river levels, drainage conditions, and district reports."
+    }
+  ],
+  "limitation": "This is a district-centre hybrid risk map. It is not a pixel-level inundation or village-level flood-extent map."
+}

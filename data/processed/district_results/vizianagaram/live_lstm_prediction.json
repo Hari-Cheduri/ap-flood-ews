@@ -1,0 +1,19 @@
+{
+  "created_utc": "2026-07-18T07:40:52.666227+00:00",
+  "contract": "open_meteo_hourly_72x6_v1",
+  "model_status": "usable_prototype",
+  "location_name": "vizianagaram",
+  "latitude": 18.1,
+  "longitude": 83.4,
+  "probability": 0.7268210053443909,
+  "threshold": 0.3449999999999999,
+  "prediction": 1,
+  "prediction_label": "HIGH_WEATHER_RISK",
+  "confidence": "HIGH",
+  "weather_summary": {
+    "rain_last_24h_mm": 11.600000381469727,
+    "rain_last_72h_mm": 13.40000057220459,
+    "mean_humidity_last_24h": 88.70833587646484
+  },
+  "interpretation": "Next-24-hour weather-driven flood-risk proxy, not confirmed inundation."
+}

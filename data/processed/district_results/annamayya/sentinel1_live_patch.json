@@ -1,0 +1,52 @@
+{
+  "created_utc": "2026-07-18T07:24:31.418851+00:00",
+  "contract": "sentinel1_png_rgb_v1",
+  "location_name": "annamayya",
+  "latitude": 14.05,
+  "longitude": 78.75,
+  "buffer_km": 18.0,
+  "window_days": 12,
+  "search_window_start": "2026-07-07",
+  "search_window_end_exclusive": "2026-07-19",
+  "sentinel1_scene_count": 2,
+  "composite_method": "median",
+  "scene_times_utc": [
+    "2026-07-12T00:30:58+00:00",
+    "2026-07-17T00:39:05+00:00"
+  ],
+  "latest_scene_utc": "2026-07-17T00:39:05+00:00",
+  "oldest_scene_utc": "2026-07-12T00:30:58+00:00",
+  "satellite_freshness": {
+    "class": "FRESH",
+    "age_days": 1.282,
+    "factor": 1.0,
+    "usable": true,
+    "policy": {
+      "fresh_max_days": 3,
+      "recent_max_days": 6,
+      "aging_max_days": 12,
+      "stale_max_days": 24,
+      "expired_after_days": 24
+    },
+    "latest_scene_utc": "2026-07-17T00:39:05+00:00",
+    "oldest_scene_utc": "2026-07-12T00:30:58+00:00",
+    "composite_span_days": 5.006
+  },
+  "shape": [
+    64,
+    64,
+    3
+  ],
+  "dtype": "float32",
+  "range": {
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.46446144580841064,
+    "std": 0.09934398531913757
+  },
+  "bands": [
+    "VV rendered [-25, 0] dB",
+    "VH rendered [-30, -5] dB",
+    "VV minus VH rendered [0, 20] dB"
+  ]
+}

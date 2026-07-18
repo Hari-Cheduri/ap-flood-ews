@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-07-18T07:30:24.347122+00:00",
+  "contract": "open_meteo_hourly_72x6_v1",
+  "location_name": "dr_br_ambedkar_konaseema",
+  "latitude": 16.58,
+  "longitude": 82.01,
+  "features": [
+    "temperature_2m",
+    "relative_humidity_2m",
+    "precipitation",
+    "rain",
+    "wind_speed_10m",
+    "surface_pressure"
+  ],
+  "shape": [
+    72,
+    6
+  ],
+  "start_time": "2026-07-15T14:00",
+  "end_time": "2026-07-18T13:00",
+  "raw_summary": {
+    "rain_last_24h_mm": 10.200000762939453,
+    "rain_last_72h_mm": 18.799999237060547,
+    "mean_humidity_last_24h": 79.375
+  }
+}

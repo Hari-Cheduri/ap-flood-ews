@@ -1,0 +1,125 @@
+{
+  "status": "usable_prototype",
+  "warnings": [],
+  "contract": "open_meteo_hourly_72x6_v1",
+  "features": [
+    "temperature_2m",
+    "relative_humidity_2m",
+    "precipitation",
+    "rain",
+    "wind_speed_10m",
+    "surface_pressure"
+  ],
+  "input_shape": [
+    72,
+    6
+  ],
+  "selected_trial": 3,
+  "threshold": 0.3449999999999999,
+  "dataset": {
+    "train": {
+      "0": 16275,
+      "1": 4478
+    },
+    "val": {
+      "0": 4766,
+      "1": 1479
+    },
+    "test": {
+      "0": 4804,
+      "1": 1935
+    }
+  },
+  "validation": {
+    "threshold": 0.3449999999999999,
+    "accuracy": 0.6978382706164932,
+    "balanced_accuracy": 0.7752222540947442,
+    "precision": 0.43494897959183676,
+    "recall": 0.9222447599729547,
+    "specificity": 0.6281997482165338,
+    "f1": 0.591115926327194,
+    "mcc": 0.46803276911355,
+    "confusion_matrix": [
+      [
+        2994,
+        1772
+      ],
+      [
+        115,
+        1364
+      ]
+    ],
+    "predicted_0": 3109,
+    "predicted_1": 3136,
+    "roc_auc": 0.8745382622060647,
+    "pr_auc": 0.7117390934172203,
+    "probability_stats": {
+      "min": 0.0010986332781612873,
+      "max": 0.9909385442733765,
+      "mean": 0.37825730443000793,
+      "std": 0.3319387137889862,
+      "p05": 0.005376721918582917,
+      "p95": 0.9182453274726867,
+      "spread_p95_p05": 0.9128686055541038
+    },
+    "collapsed_probability_warning": false,
+    "threshold_selection": {
+      "threshold": 0.3449999999999999,
+      "accuracy": 0.6978382706164932,
+      "balanced_accuracy": 0.7752222540947442,
+      "precision": 0.43494897959183676,
+      "recall": 0.9222447599729547,
+      "specificity": 0.6281997482165338,
+      "f1": 0.591115926327194,
+      "mcc": 0.46803276911355,
+      "confusion_matrix": [
+        [
+          2994,
+          1772
+        ],
+        [
+          115,
+          1364
+        ]
+      ],
+      "predicted_0": 3109,
+      "predicted_1": 3136,
+      "selection_score": 0.7586001733284988
+    }
+  },
+  "test": {
+    "threshold": 0.3449999999999999,
+    "accuracy": 0.6103279418311323,
+    "balanced_accuracy": 0.6981372650267756,
+    "precision": 0.4175614411834884,
+    "recall": 0.9043927648578811,
+    "specificity": 0.4918817651956703,
+    "f1": 0.5713352921971923,
+    "mcc": 0.36972566725951406,
+    "confusion_matrix": [
+      [
+        2363,
+        2441
+      ],
+      [
+        185,
+        1750
+      ]
+    ],
+    "predicted_0": 2548,
+    "predicted_1": 4191,
+    "roc_auc": 0.8001595354431168,
+    "pr_auc": 0.6013548585792705,
+    "probability_stats": {
+      "min": 0.0008695918950252235,
+      "max": 0.9920623898506165,
+      "mean": 0.4475310444831848,
+      "std": 0.2861223816871643,
+      "p05": 0.01652618292719126,
+      "p95": 0.8712551057338714,
+      "spread_p95_p05": 0.8547289228066802
+    },
+    "collapsed_probability_warning": false
+  },
+  "label_limitation": "Target is a weather-risk proxy derived from future rainfall, not verified physical flood inundation."
+}

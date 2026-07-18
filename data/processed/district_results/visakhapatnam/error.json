@@ -1,0 +1,9 @@
+{
+  "failed_utc": "2026-07-18T07:40:03.295467+00:00",
+  "district_slug": "visakhapatnam",
+  "district_name": "Visakhapatnam",
+  "latitude": 17.69,
+  "longitude": 83.22,
+  "status": "failed",
+  "error": "Full pipeline returned exit code 1"
+}

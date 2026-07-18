@@ -1,0 +1,53 @@
+{
+  "pipeline_started_utc": "2026-07-18T07:26:39.692277+00:00",
+  "pipeline_completed_utc": "2026-07-18T07:27:27.725682+00:00",
+  "project": "ap-flood-monitor",
+  "location_name": "east_godavari",
+  "latitude": 16.99,
+  "longitude": 81.78,
+  "cnn": {
+    "probability": 0.6569029688835144,
+    "threshold": 0.055,
+    "prediction": 1,
+    "confidence": "HIGH",
+    "satellite_freshness": {
+      "class": "AGING",
+      "age_days": 11.295,
+      "factor": 0.6,
+      "usable": true,
+      "policy": {
+        "fresh_max_days": 3,
+        "recent_max_days": 6,
+        "aging_max_days": 12,
+        "stale_max_days": 24,
+        "expired_after_days": 24
+      },
+      "latest_scene_utc": "2026-07-07T00:22:01+00:00",
+      "oldest_scene_utc": "2026-07-07T00:22:01+00:00",
+      "composite_span_days": 0.0
+    },
+    "latest_scene_utc": "2026-07-07T00:22:01+00:00",
+    "scene_count": 1,
+    "composite_method": "median",
+    "effective_weight": 0.32926829268292684
+  },
+  "lstm": {
+    "probability": 0.689400315284729,
+    "threshold": 0.3449999999999999,
+    "prediction": 1,
+    "confidence": "HIGH",
+    "weather_summary": {
+      "rain_last_24h_mm": 10.5,
+      "rain_last_72h_mm": 14.299999237060547,
+      "mean_humidity_last_24h": 80.75
+    },
+    "effective_weight": 0.6707317073170732
+  },
+  "hybrid": {
+    "fusion_score": 0.7811971836959879,
+    "alert_level": "ORANGE",
+    "message": "Meaningful combined flood-risk evidence. Verify river levels, drainage conditions, and district reports.",
+    "evidence_agreement": "BOTH_POSITIVE"
+  },
+  "status": "success"
+}

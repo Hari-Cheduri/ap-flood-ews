@@ -1,0 +1,53 @@
+{
+  "pipeline_started_utc": "2026-07-18T07:27:27.978516+00:00",
+  "pipeline_completed_utc": "2026-07-18T07:28:17.481985+00:00",
+  "project": "ap-flood-monitor",
+  "location_name": "eluru",
+  "latitude": 16.71,
+  "longitude": 81.1,
+  "cnn": {
+    "probability": 0.052564725279808044,
+    "threshold": 0.055,
+    "prediction": 0,
+    "confidence": "LOW",
+    "satellite_freshness": {
+      "class": "AGING",
+      "age_days": 6.29,
+      "factor": 0.6,
+      "usable": true,
+      "policy": {
+        "fresh_max_days": 3,
+        "recent_max_days": 6,
+        "aging_max_days": 12,
+        "stale_max_days": 24,
+        "expired_after_days": 24
+      },
+      "latest_scene_utc": "2026-07-12T00:30:08+00:00",
+      "oldest_scene_utc": "2026-07-07T00:22:01+00:00",
+      "composite_span_days": 5.006
+    },
+    "latest_scene_utc": "2026-07-12T00:30:08+00:00",
+    "scene_count": 2,
+    "composite_method": "median",
+    "effective_weight": 0.2441860465116279
+  },
+  "lstm": {
+    "probability": 0.6277251243591309,
+    "threshold": 0.3449999999999999,
+    "prediction": 1,
+    "confidence": "HIGH",
+    "weather_summary": {
+      "rain_last_24h_mm": 6.800000190734863,
+      "rain_last_72h_mm": 8.5,
+      "mean_humidity_last_24h": 78.33333587646484
+    },
+    "effective_weight": 0.7558139534883721
+  },
+  "hybrid": {
+    "fusion_score": 0.6577142997930463,
+    "alert_level": "ORANGE",
+    "message": "Meaningful combined flood-risk evidence. Verify river levels, drainage conditions, and district reports.",
+    "evidence_agreement": "LSTM_ONLY"
+  },
+  "status": "success"
+}

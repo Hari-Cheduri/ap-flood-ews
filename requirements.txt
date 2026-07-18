@@ -1,16 +1,40 @@
-﻿tensorflow==2.13.0
-numpy
-pandas
-scikit-learn
-matplotlib
-seaborn
-folium
-flask
-pillow
-opencv-python
-scipy
-plotly
-dash
-joblib
-twilio
-requests
+# AP Flood Early Warning System
+# Recommended interpreter: Python 3.11
+#
+# TensorFlow 2.13 requires NumPy 1.x. Do not upgrade this environment to
+# NumPy 2.x.
+#
+# requirements.txt contains the direct project dependencies.
+# requirements-lock.txt should be used to reproduce the exact tested machine.
+
+# Deep learning and numerical computing
+tensorflow==2.13.0
+numpy==1.24.3
+protobuf==4.25.3
+scipy==1.11.4
+scikit-learn==1.3.2
+joblib>=1.3,<2
+
+# Data handling
+pandas>=2.0,<3
+
+# Satellite and API access
+earthengine-api>=1.1,<2
+requests>=2.31,<3
+Pillow>=9.5,<12
+
+# Maps and visualisation
+matplotlib>=3.7,<4
+folium>=0.15,<1
+plotly>=5.18,<7
+
+# Dashboard and API endpoints
+dash>=4.0,<5
+Flask>=2.2,<4
+
+# Terminal output
+colorama>=0.4.6,<1
+
+# Optional real SMS provider.
+# The project can remain in mock mode without real credentials.
+twilio>=8.10,<10

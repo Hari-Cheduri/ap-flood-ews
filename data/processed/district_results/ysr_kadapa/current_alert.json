@@ -1,0 +1,53 @@
+{
+  "pipeline_started_utc": "2026-07-18T07:41:43.981771+00:00",
+  "pipeline_completed_utc": "2026-07-18T07:42:26.824570+00:00",
+  "project": "ap-flood-monitor",
+  "location_name": "ysr_kadapa",
+  "latitude": 14.47,
+  "longitude": 78.82,
+  "cnn": {
+    "probability": 0.020475925877690315,
+    "threshold": 0.055,
+    "prediction": 0,
+    "confidence": "LOW",
+    "satellite_freshness": {
+      "class": "FRESH",
+      "age_days": 1.294,
+      "factor": 1.0,
+      "usable": true,
+      "policy": {
+        "fresh_max_days": 3,
+        "recent_max_days": 6,
+        "aging_max_days": 12,
+        "stale_max_days": 24,
+        "expired_after_days": 24
+      },
+      "latest_scene_utc": "2026-07-17T00:39:05+00:00",
+      "oldest_scene_utc": "2026-07-12T00:30:58+00:00",
+      "composite_span_days": 5.006
+    },
+    "latest_scene_utc": "2026-07-17T00:39:05+00:00",
+    "scene_count": 2,
+    "composite_method": "median",
+    "effective_weight": 0.35
+  },
+  "lstm": {
+    "probability": 0.6219547986984253,
+    "threshold": 0.3449999999999999,
+    "prediction": 1,
+    "confidence": "HIGH",
+    "weather_summary": {
+      "rain_last_24h_mm": 23.899999618530273,
+      "rain_last_72h_mm": 52.599998474121094,
+      "mean_humidity_last_24h": 68.45833587646484
+    },
+    "effective_weight": 0.65
+  },
+  "hybrid": {
+    "fusion_score": 0.527570993212064,
+    "alert_level": "YELLOW",
+    "message": "Possible or borderline combined risk. Monitor updates and verify local reports.",
+    "evidence_agreement": "LSTM_ONLY"
+  },
+  "status": "success"
+}

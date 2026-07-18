@@ -1,0 +1,62 @@
+{
+  "lstm_threshold": 0.3449999999999999,
+  "contract": "open_meteo_hourly_72x6_v1",
+  "selected_trial": 3,
+  "validation_metrics": {
+    "threshold": 0.3449999999999999,
+    "accuracy": 0.6978382706164932,
+    "balanced_accuracy": 0.7752222540947442,
+    "precision": 0.43494897959183676,
+    "recall": 0.9222447599729547,
+    "specificity": 0.6281997482165338,
+    "f1": 0.591115926327194,
+    "mcc": 0.46803276911355,
+    "confusion_matrix": [
+      [
+        2994,
+        1772
+      ],
+      [
+        115,
+        1364
+      ]
+    ],
+    "predicted_0": 3109,
+    "predicted_1": 3136,
+    "roc_auc": 0.8745382622060647,
+    "pr_auc": 0.7117390934172203,
+    "probability_stats": {
+      "min": 0.0010986332781612873,
+      "max": 0.9909385442733765,
+      "mean": 0.37825730443000793,
+      "std": 0.3319387137889862,
+      "p05": 0.005376721918582917,
+      "p95": 0.9182453274726867,
+      "spread_p95_p05": 0.9128686055541038
+    },
+    "collapsed_probability_warning": false,
+    "threshold_selection": {
+      "threshold": 0.3449999999999999,
+      "accuracy": 0.6978382706164932,
+      "balanced_accuracy": 0.7752222540947442,
+      "precision": 0.43494897959183676,
+      "recall": 0.9222447599729547,
+      "specificity": 0.6281997482165338,
+      "f1": 0.591115926327194,
+      "mcc": 0.46803276911355,
+      "confusion_matrix": [
+        [
+          2994,
+          1772
+        ],
+        [
+          115,
+          1364
+        ]
+      ],
+      "predicted_0": 3109,
+      "predicted_1": 3136,
+      "selection_score": 0.7586001733284988
+    }
+  }
+}

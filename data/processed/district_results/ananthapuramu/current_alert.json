@@ -1,0 +1,53 @@
+{
+  "pipeline_started_utc": "2026-07-18T07:23:32.268392+00:00",
+  "pipeline_completed_utc": "2026-07-18T07:24:19.836402+00:00",
+  "project": "ap-flood-monitor",
+  "location_name": "ananthapuramu",
+  "latitude": 14.68,
+  "longitude": 77.6,
+  "cnn": {
+    "probability": 0.027116402983665466,
+    "threshold": 0.055,
+    "prediction": 0,
+    "confidence": "LOW",
+    "satellite_freshness": {
+      "class": "FRESH",
+      "age_days": 1.281,
+      "factor": 1.0,
+      "usable": true,
+      "policy": {
+        "fresh_max_days": 3,
+        "recent_max_days": 6,
+        "aging_max_days": 12,
+        "stale_max_days": 24,
+        "expired_after_days": 24
+      },
+      "latest_scene_utc": "2026-07-17T00:39:05+00:00",
+      "oldest_scene_utc": "2026-07-17T00:39:05+00:00",
+      "composite_span_days": 0.0
+    },
+    "latest_scene_utc": "2026-07-17T00:39:05+00:00",
+    "scene_count": 1,
+    "composite_method": "median",
+    "effective_weight": 0.35
+  },
+  "lstm": {
+    "probability": 0.42143410444259644,
+    "threshold": 0.3449999999999999,
+    "prediction": 1,
+    "confidence": "MEDIUM",
+    "weather_summary": {
+      "rain_last_24h_mm": 8.100000381469727,
+      "rain_last_72h_mm": 9.399999618530273,
+      "mean_humidity_last_24h": 70.08333587646484
+    },
+    "effective_weight": 0.65
+  },
+  "hybrid": {
+    "fusion_score": 0.4492047830371705,
+    "alert_level": "YELLOW",
+    "message": "Possible or borderline combined risk. Monitor updates and verify local reports.",
+    "evidence_agreement": "LSTM_ONLY"
+  },
+  "status": "success"
+}

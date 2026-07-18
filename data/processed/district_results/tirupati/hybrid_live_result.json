@@ -1,0 +1,46 @@
+{
+  "created_utc": "2026-07-18T07:39:30.937192+00:00",
+  "location_name": "tirupati",
+  "cnn": {
+    "raw_probability": 0.014408641494810581,
+    "threshold": 0.055,
+    "decision_score": 0.13098764995282347,
+    "positive": false,
+    "effective_positive": false,
+    "confidence": "LOW",
+    "base_weight": 0.35,
+    "freshness": {
+      "class": "AGING",
+      "age_days": 6.297,
+      "factor": 0.6,
+      "usable": true,
+      "policy": {
+        "fresh_max_days": 3,
+        "recent_max_days": 6,
+        "aging_max_days": 12,
+        "stale_max_days": 24,
+        "expired_after_days": 24
+      },
+      "latest_scene_utc": "2026-07-12T00:30:58+00:00",
+      "oldest_scene_utc": "2026-07-12T00:30:58+00:00",
+      "composite_span_days": 0.0
+    },
+    "freshness_factor": 0.6,
+    "weight": 0.2441860465116279
+  },
+  "lstm": {
+    "raw_probability": 0.7004552483558655,
+    "threshold": 0.3449999999999999,
+    "decision_score": 0.7713398842411188,
+    "positive": true,
+    "confidence": "HIGH",
+    "base_weight": 0.65,
+    "weight": 0.7558139534883721
+  },
+  "evidence_agreement": "LSTM_ONLY",
+  "fusion_score": 0.6149748037753722,
+  "alert_level": "ORANGE",
+  "message": "Meaningful combined flood-risk evidence. Verify river levels, drainage conditions, and district reports.",
+  "method": "Threshold-centered decision-level fusion. CNN influence is multiplied by a Sentinel-1 freshness factor and weights are renormalized. Combined score drives GREEN/YELLOW/ORANGE; RED requires two usable positive evidence sources.",
+  "limitation": "Academic prototype; not an official disaster alert."
+}

@@ -1,0 +1,53 @@
+{
+  "pipeline_started_utc": "2026-07-18T07:37:52.669146+00:00",
+  "pipeline_completed_utc": "2026-07-18T07:38:42.817825+00:00",
+  "project": "ap-flood-monitor",
+  "location_name": "srikakulam",
+  "latitude": 18.29,
+  "longitude": 83.9,
+  "cnn": {
+    "probability": 0.8588145971298218,
+    "threshold": 0.055,
+    "prediction": 1,
+    "confidence": "HIGH",
+    "satellite_freshness": {
+      "class": "RECENT",
+      "age_days": 4.309,
+      "factor": 0.85,
+      "usable": true,
+      "policy": {
+        "fresh_max_days": 3,
+        "recent_max_days": 6,
+        "aging_max_days": 12,
+        "stale_max_days": 24,
+        "expired_after_days": 24
+      },
+      "latest_scene_utc": "2026-07-14T00:13:30+00:00",
+      "oldest_scene_utc": "2026-07-07T00:21:11+00:00",
+      "composite_span_days": 6.995
+    },
+    "latest_scene_utc": "2026-07-14T00:13:30+00:00",
+    "scene_count": 4,
+    "composite_method": "median",
+    "effective_weight": 0.41018766756032166
+  },
+  "lstm": {
+    "probability": 0.8326319456100464,
+    "threshold": 0.3449999999999999,
+    "prediction": 1,
+    "confidence": "HIGH",
+    "weather_summary": {
+      "rain_last_24h_mm": 21.799999237060547,
+      "rain_last_72h_mm": 56.5,
+      "mean_humidity_last_24h": 89.5
+    },
+    "effective_weight": 0.5898123324396782
+  },
+  "hybrid": {
+    "fusion_score": 0.8940029310839468,
+    "alert_level": "RED",
+    "message": "Strong usable satellite and weather evidence. Escalate for official verification and emergency decision-making.",
+    "evidence_agreement": "BOTH_POSITIVE"
+  },
+  "status": "success"
+}

@@ -1,0 +1,83 @@
+{
+  "created_utc": "2026-07-18T07:40:32.000347+00:00",
+  "model": "models\\real_cnn_model.h5",
+  "model_status": "usable_prototype",
+  "contract": "sentinel1_png_rgb_v1",
+  "threshold": 0.055,
+  "probability": 0.013746476732194424,
+  "prediction": 0,
+  "prediction_label": "NON_FLOOD_LIKE",
+  "distance_from_threshold": -0.04125352326780558,
+  "confidence_label": "LOW",
+  "satellite_freshness": {
+    "class": "RECENT",
+    "age_days": 4.31,
+    "factor": 0.85,
+    "usable": true,
+    "policy": {
+      "fresh_max_days": 3,
+      "recent_max_days": 6,
+      "aging_max_days": 12,
+      "stale_max_days": 24,
+      "expired_after_days": 24
+    },
+    "latest_scene_utc": "2026-07-14T00:13:30+00:00",
+    "oldest_scene_utc": "2026-07-07T00:21:36+00:00",
+    "composite_span_days": 6.994
+  },
+  "satellite_evidence_usable": true,
+  "patch": "data\\processed\\sentinel1_live_patch.npy",
+  "patch_metadata": {
+    "created_utc": "2026-07-18T07:40:18.101957+00:00",
+    "contract": "sentinel1_png_rgb_v1",
+    "location_name": "vizianagaram",
+    "latitude": 18.1,
+    "longitude": 83.4,
+    "buffer_km": 18.0,
+    "window_days": 12,
+    "search_window_start": "2026-07-07",
+    "search_window_end_exclusive": "2026-07-19",
+    "sentinel1_scene_count": 2,
+    "composite_method": "median",
+    "scene_times_utc": [
+      "2026-07-07T00:21:36+00:00",
+      "2026-07-14T00:13:30+00:00"
+    ],
+    "latest_scene_utc": "2026-07-14T00:13:30+00:00",
+    "oldest_scene_utc": "2026-07-07T00:21:36+00:00",
+    "satellite_freshness": {
+      "class": "RECENT",
+      "age_days": 4.31,
+      "factor": 0.85,
+      "usable": true,
+      "policy": {
+        "fresh_max_days": 3,
+        "recent_max_days": 6,
+        "aging_max_days": 12,
+        "stale_max_days": 24,
+        "expired_after_days": 24
+      },
+      "latest_scene_utc": "2026-07-14T00:13:30+00:00",
+      "oldest_scene_utc": "2026-07-07T00:21:36+00:00",
+      "composite_span_days": 6.994
+    },
+    "shape": [
+      64,
+      64,
+      3
+    ],
+    "dtype": "float32",
+    "range": {
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.5311523079872131,
+      "std": 0.1539052575826645
+    },
+    "bands": [
+      "VV rendered [-25, 0] dB",
+      "VH rendered [-30, -5] dB",
+      "VV minus VH rendered [0, 20] dB"
+    ]
+  },
+  "interpretation": "CNN flood-like surface evidence. The hybrid system must down-weight or ignore this evidence when the scene is old."
+}

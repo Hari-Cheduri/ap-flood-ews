@@ -1,0 +1,54 @@
+{
+  "created_utc": "2026-07-15T15:43:00.476082+00:00",
+  "contract": "open_meteo_hourly_72x6_v1",
+  "source": "Open-Meteo Historical Weather API",
+  "features": [
+    "temperature_2m",
+    "relative_humidity_2m",
+    "precipitation",
+    "rain",
+    "wind_speed_10m",
+    "surface_pressure"
+  ],
+  "input_shape": [
+    72,
+    6
+  ],
+  "label": "Weak next-24-hour weather-driven flood-risk proxy",
+  "splits": {
+    "train": {
+      "shape": [
+        20753,
+        72,
+        6
+      ],
+      "classes": {
+        "0": 16275,
+        "1": 4478
+      }
+    },
+    "val": {
+      "shape": [
+        6245,
+        72,
+        6
+      ],
+      "classes": {
+        "0": 4766,
+        "1": 1479
+      }
+    },
+    "test": {
+      "shape": [
+        6739,
+        72,
+        6
+      ],
+      "classes": {
+        "0": 4804,
+        "1": 1935
+      }
+    }
+  },
+  "request_failures": []
+}

@@ -1,0 +1,46 @@
+{
+  "created_utc": "2026-07-18T07:29:07.135617+00:00",
+  "location_name": "guntur",
+  "cnn": {
+    "raw_probability": 0.04994407668709755,
+    "threshold": 0.055,
+    "decision_score": 0.4540370607917959,
+    "positive": false,
+    "effective_positive": false,
+    "confidence": "LOW",
+    "base_weight": 0.35,
+    "freshness": {
+      "class": "AGING",
+      "age_days": 6.291,
+      "factor": 0.6,
+      "usable": true,
+      "policy": {
+        "fresh_max_days": 3,
+        "recent_max_days": 6,
+        "aging_max_days": 12,
+        "stale_max_days": 24,
+        "expired_after_days": 24
+      },
+      "latest_scene_utc": "2026-07-12T00:30:08+00:00",
+      "oldest_scene_utc": "2026-07-12T00:30:08+00:00",
+      "composite_span_days": 0.0
+    },
+    "freshness_factor": 0.6,
+    "weight": 0.2441860465116279
+  },
+  "lstm": {
+    "raw_probability": 0.5219696164131165,
+    "threshold": 0.3449999999999999,
+    "decision_score": 0.6350913102390202,
+    "positive": true,
+    "confidence": "HIGH",
+    "base_weight": 0.65,
+    "weight": 0.7558139534883721
+  },
+  "evidence_agreement": "LSTM_ONLY",
+  "fusion_score": 0.5908803888623724,
+  "alert_level": "YELLOW",
+  "message": "Possible or borderline combined risk. Monitor updates and verify local reports.",
+  "method": "Threshold-centered decision-level fusion. CNN influence is multiplied by a Sentinel-1 freshness factor and weights are renormalized. Combined score drives GREEN/YELLOW/ORANGE; RED requires two usable positive evidence sources.",
+  "limitation": "Academic prototype; not an official disaster alert."
+}

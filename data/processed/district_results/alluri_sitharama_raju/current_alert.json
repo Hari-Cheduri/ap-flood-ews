@@ -1,0 +1,53 @@
+{
+  "pipeline_started_utc": "2026-07-18T07:21:58.182692+00:00",
+  "pipeline_completed_utc": "2026-07-18T07:22:43.785929+00:00",
+  "project": "ap-flood-monitor",
+  "location_name": "alluri_sitharama_raju",
+  "latitude": 18.08,
+  "longitude": 82.66,
+  "cnn": {
+    "probability": 0.017226053401827812,
+    "threshold": 0.055,
+    "prediction": 0,
+    "confidence": "LOW",
+    "satellite_freshness": {
+      "class": "AGING",
+      "age_days": 11.292,
+      "factor": 0.6,
+      "usable": true,
+      "policy": {
+        "fresh_max_days": 3,
+        "recent_max_days": 6,
+        "aging_max_days": 12,
+        "stale_max_days": 24,
+        "expired_after_days": 24
+      },
+      "latest_scene_utc": "2026-07-07T00:21:36+00:00",
+      "oldest_scene_utc": "2026-07-07T00:21:36+00:00",
+      "composite_span_days": 0.0
+    },
+    "latest_scene_utc": "2026-07-07T00:21:36+00:00",
+    "scene_count": 1,
+    "composite_method": "median",
+    "effective_weight": 0.2441860465116279
+  },
+  "lstm": {
+    "probability": 0.5196434259414673,
+    "threshold": 0.3449999999999999,
+    "prediction": 1,
+    "confidence": "HIGH",
+    "weather_summary": {
+      "rain_last_24h_mm": 3.6000001430511475,
+      "rain_last_72h_mm": 4.800000190734863,
+      "mean_humidity_last_24h": 89.91666412353516
+    },
+    "effective_weight": 0.7558139534883721
+  },
+  "hybrid": {
+    "fusion_score": 0.5169084150675222,
+    "alert_level": "YELLOW",
+    "message": "Possible or borderline combined risk. Monitor updates and verify local reports.",
+    "evidence_agreement": "LSTM_ONLY"
+  },
+  "status": "success"
+}

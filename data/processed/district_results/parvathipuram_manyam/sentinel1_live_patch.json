@@ -1,0 +1,52 @@
+{
+  "created_utc": "2026-07-18T07:34:49.301960+00:00",
+  "contract": "sentinel1_png_rgb_v1",
+  "location_name": "parvathipuram_manyam",
+  "latitude": 18.78,
+  "longitude": 83.43,
+  "buffer_km": 18.0,
+  "window_days": 12,
+  "search_window_start": "2026-07-07",
+  "search_window_end_exclusive": "2026-07-19",
+  "sentinel1_scene_count": 2,
+  "composite_method": "median",
+  "scene_times_utc": [
+    "2026-07-07T00:21:11+00:00",
+    "2026-07-14T00:13:05+00:00"
+  ],
+  "latest_scene_utc": "2026-07-14T00:13:05+00:00",
+  "oldest_scene_utc": "2026-07-07T00:21:11+00:00",
+  "satellite_freshness": {
+    "class": "RECENT",
+    "age_days": 4.307,
+    "factor": 0.85,
+    "usable": true,
+    "policy": {
+      "fresh_max_days": 3,
+      "recent_max_days": 6,
+      "aging_max_days": 12,
+      "stale_max_days": 24,
+      "expired_after_days": 24
+    },
+    "latest_scene_utc": "2026-07-14T00:13:05+00:00",
+    "oldest_scene_utc": "2026-07-07T00:21:11+00:00",
+    "composite_span_days": 6.994
+  },
+  "shape": [
+    64,
+    64,
+    3
+  ],
+  "dtype": "float32",
+  "range": {
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.5683644413948059,
+    "std": 0.16505546867847443
+  },
+  "bands": [
+    "VV rendered [-25, 0] dB",
+    "VH rendered [-30, -5] dB",
+    "VV minus VH rendered [0, 20] dB"
+  ]
+}

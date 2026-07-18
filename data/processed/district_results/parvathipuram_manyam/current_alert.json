@@ -1,0 +1,53 @@
+{
+  "pipeline_started_utc": "2026-07-18T07:34:35.012734+00:00",
+  "pipeline_completed_utc": "2026-07-18T07:35:25.873644+00:00",
+  "project": "ap-flood-monitor",
+  "location_name": "parvathipuram_manyam",
+  "latitude": 18.78,
+  "longitude": 83.43,
+  "cnn": {
+    "probability": 0.01711980067193508,
+    "threshold": 0.055,
+    "prediction": 0,
+    "confidence": "LOW",
+    "satellite_freshness": {
+      "class": "RECENT",
+      "age_days": 4.307,
+      "factor": 0.85,
+      "usable": true,
+      "policy": {
+        "fresh_max_days": 3,
+        "recent_max_days": 6,
+        "aging_max_days": 12,
+        "stale_max_days": 24,
+        "expired_after_days": 24
+      },
+      "latest_scene_utc": "2026-07-14T00:13:05+00:00",
+      "oldest_scene_utc": "2026-07-07T00:21:11+00:00",
+      "composite_span_days": 6.994
+    },
+    "latest_scene_utc": "2026-07-14T00:13:05+00:00",
+    "scene_count": 2,
+    "composite_method": "median",
+    "effective_weight": 0.31398416886543534
+  },
+  "lstm": {
+    "probability": 0.7509663701057434,
+    "threshold": 0.3449999999999999,
+    "prediction": 1,
+    "confidence": "HIGH",
+    "weather_summary": {
+      "rain_last_24h_mm": 14.100000381469727,
+      "rain_last_72h_mm": 48.5,
+      "mean_humidity_last_24h": 89.5
+    },
+    "effective_weight": 0.6860158311345647
+  },
+  "hybrid": {
+    "fusion_score": 0.6044696297421027,
+    "alert_level": "ORANGE",
+    "message": "Meaningful combined flood-risk evidence. Verify river levels, drainage conditions, and district reports.",
+    "evidence_agreement": "LSTM_ONLY"
+  },
+  "status": "success"
+}

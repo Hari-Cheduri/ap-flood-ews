@@ -1,0 +1,19 @@
+{
+  "created_utc": "2026-07-18T07:33:41.405171+00:00",
+  "contract": "open_meteo_hourly_72x6_v1",
+  "model_status": "usable_prototype",
+  "location_name": "ntr_vijayawada",
+  "latitude": 16.51,
+  "longitude": 80.65,
+  "probability": 0.6390007734298706,
+  "threshold": 0.3449999999999999,
+  "prediction": 1,
+  "prediction_label": "HIGH_WEATHER_RISK",
+  "confidence": "HIGH",
+  "weather_summary": {
+    "rain_last_24h_mm": 8.399999618530273,
+    "rain_last_72h_mm": 12.300000190734863,
+    "mean_humidity_last_24h": 76.75
+  },
+  "interpretation": "Next-24-hour weather-driven flood-risk proxy, not confirmed inundation."
+}

@@ -1,4 +1,4 @@
-﻿"""
+"""
 Live district-level AP flood alert and SMS system.
 
 This version consumes data/processed/ap_district_risk.json generated from the
@@ -169,7 +169,7 @@ class FloodAlertSystem:
                 "'python -m realtime.build_ap_risk_map_data' first."
             )
         return json.loads(
-            self.risk_path.read_text(encoding="utf-8")
+            self.risk_path.read_text(encoding="utf-8-sig")
         )
 
     @staticmethod
@@ -426,7 +426,7 @@ class SMSAlertSystem:
                 encoding="utf-8",
             )
             print(f"[SMS] Created safe mock config at {path}")
-        return json.loads(path.read_text(encoding="utf-8"))
+        return json.loads(path.read_text(encoding="utf-8-sig"))
 
     def _init_provider(self) -> None:
         if self.provider == "twilio":

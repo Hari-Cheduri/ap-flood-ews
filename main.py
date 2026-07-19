@@ -65,7 +65,7 @@ def run_module(module_name: str, arguments: Iterable[str], label: str) -> None:
 
 
 def read_json(path: Path) -> dict:
-    return json.loads(path.read_text(encoding="utf-8"))
+    return json.loads(path.read_text(encoding="utf-8-sig"))
 
 
 def cmd_status(_args: argparse.Namespace) -> None:

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import time
 from datetime import datetime, timezone
 
 import joblib
@@ -31,19 +32,60 @@ def main() -> None:
             f"Missing {SCALER_PATH}. Build the LSTM dataset first."
         )
 
-    response = requests.get(
-        FORECAST_URL,
-        params={
-            "latitude": args.lat,
-            "longitude": args.lon,
-            "hourly": ",".join(FEATURES),
-            "past_days": 4,
-            "forecast_days": 1,
-            "timezone": "Asia/Kolkata",
-        },
-        timeout=60,
-    )
-    response.raise_for_status()
+    params = {
+        "latitude": args.lat,
+        "longitude": args.lon,
+        "hourly": ",".join(FEATURES),
+        "past_days": 4,
+        "forecast_days": 1,
+        "timezone": "Asia/Kolkata",
+    }
+
+    retryable_statuses = {429, 500, 502, 503, 504}
+    max_attempts = 6
+    response = None
+
+    for attempt in range(1, max_attempts + 1):
+        try:
+            candidate = requests.get(
+                FORECAST_URL,
+                params=params,
+                timeout=(15, 90),
+            )
+        except (requests.Timeout, requests.ConnectionError) as exc:
+            if attempt == max_attempts:
+                raise
+
+            delay = min(60, 5 * (2 ** (attempt - 1)))
+            print(
+                f"[Weather] Network failure on attempt "
+                f"{attempt}/{max_attempts}: {exc}"
+            )
+            print(f"[Weather] Retrying in {delay} seconds...")
+            time.sleep(delay)
+            continue
+
+        if (
+            candidate.status_code in retryable_statuses
+            and attempt < max_attempts
+        ):
+            delay = min(60, 5 * (2 ** (attempt - 1)))
+            print(
+                f"[Weather] HTTP {candidate.status_code} on attempt "
+                f"{attempt}/{max_attempts}"
+            )
+            print(f"[Weather] Retrying in {delay} seconds...")
+            time.sleep(delay)
+            continue
+
+        candidate.raise_for_status()
+        response = candidate
+        break
+
+    if response is None:
+        raise RuntimeError(
+            "Weather API did not return a usable response after retries."
+        )
     hourly = response.json().get("hourly") or {}
     times = hourly.get("time") or []
 

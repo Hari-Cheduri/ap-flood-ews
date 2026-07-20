@@ -63,3 +63,16 @@ outputs/predictions/dashboard_state.json
 
 # SMS runtime history may contain recipient information
 outputs/predictions/sms_log.csv
+
+# Temporary source backups
+*_before_*.py
+*_before_*.cmd
+*_before_*.ps1
+*_backup*.py
+*_backup*.cmd
+*_old.py
+*.bak
+*.backup
+
+# Maintenance reports
+maintenance_reports/
